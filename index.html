@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Walmart-Inspired Smart Storefront</title>
+  <meta name="description" content="Professional Walmart-inspired smart e-commerce homepage built with HTML, CSS, JavaScript, jQuery, and Bootstrap.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="top-strip py-2">
+    <div class="container d-flex justify-content-between align-items-center gap-2 flex-wrap">
+      <p class="small mb-0"><i class="bi bi-truck me-1"></i> Free shipping on orders over $35</p>
+      <ul class="top-links list-unstyled d-flex gap-3 mb-0 small">
+        <li><a href="shop.html">Store finder</a></li>
+        <li><a href="orders.html">Order tracking</a></li>
+        <li><a href="contact.html">Help center</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <header class="store-header">
+    <div class="container py-3">
+      <div class="row align-items-center g-3">
+        <div class="col-8 col-md-2">
+          <a class="brand d-inline-flex align-items-center text-decoration-none" href="index.html" aria-label="Walmart home">
+            <span class="brand-mark" aria-hidden="true">✶</span>
+            <span class="brand-name ms-2">Walmart</span>
+          </a>
+        </div>
+
+        <div class="col-12 col-md-4 col-lg-5 order-3 order-md-2">
+          <form class="search-wrap input-group" role="search" aria-label="Site search" autocomplete="off">
+            <input id="searchInput" type="search" class="form-control rounded-start-pill" placeholder="Search groceries, electronics, home, fashion and more">
+            <button class="btn btn-light rounded-end-pill px-4" type="submit"><i class="bi bi-search"></i></button>
+          </form>
+          <div id="searchSuggestions" class="search-suggestions d-none" aria-label="Suggested searches">
+            <button type="button" class="suggestion-item" data-query="laptop deals">laptop deals</button>
+            <button type="button" class="suggestion-item" data-query="air fryer">air fryer</button>
+            <button type="button" class="suggestion-item" data-query="wireless headphones">wireless headphones</button>
+            <button type="button" class="suggestion-item" data-query="school supplies">school supplies</button>
+          </div>
+        </div>
+
+        <div class="col-4 col-md-6 col-lg-5 order-2 order-md-3">
+          <div class="header-actions d-flex justify-content-end gap-2">
+            <a class="action-pill d-none d-md-inline-flex" href="shop.html"><i class="bi bi-geo-alt"></i><span>Pickup: Sacramento</span></a>
+            <a class="action-pill d-none d-md-inline-flex" href="account.html"><i class="bi bi-person"></i><span>Sign in</span></a>
+            <a class="action-pill d-none d-md-inline-flex" href="wishlist.html"><i class="bi bi-heart"></i><span>Wishlist</span><b id="wishlistCount">0</b></a>
+            <a class="action-pill d-none d-md-inline-flex" href="#" data-bs-toggle="modal" data-bs-target="#compareModal"><i class="bi bi-layers"></i><span>Compare</span><b id="compareCount">0</b></a>
+            <a class="action-pill" href="cart.html"><i class="bi bi-cart3"></i><span>Cart</span><b id="cartCount">0</b></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="header-nav navbar navbar-expand-lg p-0" aria-label="Department navigation">
+      <div class="container">
+        <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#departmentNav" aria-controls="departmentNav" aria-expanded="false" aria-label="Toggle departments">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="departmentNav">
+          <ul class="nav py-2 flex-nowrap overflow-auto">
+            <li class="nav-item"><a class="nav-link active" href="shop.html">Departments</a></li>
+            <li class="nav-item"><a class="nav-link" href="shop.html">Grocery</a></li>
+            <li class="nav-item"><a class="nav-link" href="shop.html">Electronics</a></li>
+            <li class="nav-item"><a class="nav-link" href="shop.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="shop.html">Fashion</a></li>
+            <li class="nav-item"><a class="nav-link" href="shop.html">Baby</a></li>
+            <li class="nav-item"><a class="nav-link" href="shop.html">Pharmacy</a></li>
+            <li class="nav-item"><a class="nav-link" href="shop.html">Auto & tires</a></li>
+            <li class="nav-item"><a class="nav-link" href="shop.html">School supplies</a></li>
+            <li class="nav-item"><a class="nav-link" href="shop.html">Deals</a></li>
+            <li class="nav-item"><a class="nav-link" href="account.html">Registry</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero py-4 py-lg-5">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-8 reveal">
+            <div id="heroCarousel" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="5500">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+
+              <div class="carousel-inner h-100 rounded-4 shadow-sm">
+                <div class="carousel-item active h-100">
+                  <article class="hero-card h-100 d-flex align-items-center">
+                    <div>
+                      <span class="badge text-bg-warning mb-3">Limited-Time Savings</span>
+                      <h1 class="display-5 fw-bold">Everyday essentials, now at lower prices</h1>
+                      <p class="mb-4">Save across groceries, cleaning supplies, and wellness products with convenient pickup or delivery.</p>
+                      <div class="d-flex gap-2 flex-wrap">
+                        <a href="#" class="btn btn-light rounded-pill px-4">Shop essentials</a>
+                        <a href="#" class="btn btn-outline-light rounded-pill px-4">View weekly ad</a>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="carousel-item h-100">
+                  <article class="hero-card alt h-100 d-flex align-items-center">
+                    <div>
+                      <span class="badge text-bg-light mb-3">Tech Refresh</span>
+                      <h2 class="display-6 fw-bold">Top-rated laptops, TVs, and audio picks</h2>
+                      <p class="mb-4">Discover online-only markdowns and free 2-day shipping on select electronics.</p>
+                      <div class="d-flex gap-2 flex-wrap">
+                        <a href="#" class="btn btn-warning rounded-pill px-4">Browse electronics</a>
+                        <a href="#" class="btn btn-outline-light rounded-pill px-4">See best sellers</a>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="carousel-item h-100">
+                  <article class="hero-card third h-100 d-flex align-items-center">
+                    <div>
+                      <span class="badge text-bg-warning mb-3">Home Upgrade</span>
+                      <h2 class="display-6 fw-bold">Refresh every room with smart picks</h2>
+                      <p class="mb-4">Furniture, kitchen, storage, and decor bundles curated for modern homes.</p>
+                      <div class="d-flex gap-2 flex-wrap">
+                        <a href="#" class="btn btn-light rounded-pill px-4">Shop home</a>
+                        <a href="#" class="btn btn-outline-light rounded-pill px-4">Explore bundles</a>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous slide">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next slide">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-4 reveal">
+            <div class="promo-stack h-100 d-grid gap-3">
+              <article class="promo-tile p-4 rounded-4">
+                <p class="tile-kicker mb-2">Kitchen event</p>
+                <h3>Up to 40% off cookware, storage, and appliances</h3>
+                <a href="#" class="tile-link">Shop kitchen <i class="bi bi-arrow-right"></i></a>
+              </article>
+              <article class="promo-tile p-4 rounded-4">
+                <p class="tile-kicker mb-2">Back to school</p>
+                <h3>Backpacks, notebooks, and classroom essentials</h3>
+                <a href="#" class="tile-link">Shop school <i class="bi bi-arrow-right"></i></a>
+              </article>
+              <article class="promo-tile p-4 rounded-4">
+                <p class="tile-kicker mb-2">Pet care</p>
+                <h3>Everyday low prices on food, treats, and toys</h3>
+                <a href="#" class="tile-link">Shop pets <i class="bi bi-arrow-right"></i></a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip pb-2 reveal">
+      <div class="container">
+        <div class="row g-3">
+          <div class="col-6 col-md-3"><div class="trust-item"><i class="bi bi-shop"></i>Pickup in as little as 2 hours</div></div>
+          <div class="col-6 col-md-3"><div class="trust-item"><i class="bi bi-box-seam"></i>Free returns up to 90 days</div></div>
+          <div class="col-6 col-md-3"><div class="trust-item"><i class="bi bi-credit-card-2-front"></i>Flexible payment options</div></div>
+          <div class="col-6 col-md-3"><div class="trust-item"><i class="bi bi-patch-check"></i>Trusted product quality</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-cats py-4 reveal">
+      <div class="container">
+        <div class="row g-3 text-center">
+          <div class="col-6 col-md-3 col-lg-2"><a href="#" class="cat-pill">Grocery</a></div>
+          <div class="col-6 col-md-3 col-lg-2"><a href="#" class="cat-pill">Electronics</a></div>
+          <div class="col-6 col-md-3 col-lg-2"><a href="#" class="cat-pill">Home</a></div>
+          <div class="col-6 col-md-3 col-lg-2"><a href="#" class="cat-pill">Beauty</a></div>
+          <div class="col-6 col-md-3 col-lg-2"><a href="#" class="cat-pill">Toys</a></div>
+          <div class="col-6 col-md-3 col-lg-2"><a href="#" class="cat-pill">Auto</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="smart-board py-4 reveal">
+      <div class="container">
+        <div class="flash-banner rounded-4 p-4 p-md-5 mb-4">
+          <div class="row align-items-center g-3">
+            <div class="col-lg-6">
+              <p class="small text-uppercase fw-bold mb-2">Flash Deals</p>
+              <h2 class="mb-2">Today-only electronics markdowns</h2>
+              <p class="mb-0">Save up to 55% on selected devices and accessories before the timer ends.</p>
+            </div>
+            <div class="col-lg-6 text-lg-end">
+              <div class="countdown d-inline-flex gap-2" id="flashCountdown" aria-label="Deal countdown timer">
+                <span><b data-time="h">12</b><small>hrs</small></span>
+                <span><b data-time="m">00</b><small>min</small></span>
+                <span><b data-time="s">00</b><small>sec</small></span>
+              </div>
+              <div class="mt-3">
+                <a href="#" class="btn btn-light rounded-pill px-4">Shop flash deals</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-4">
+            <article class="intel-card p-3 h-100">
+              <h3 class="h6">High demand now</h3>
+              <p class="small text-muted mb-2">Portable AC Units</p>
+              <div class="progress soft mb-2"><div class="progress-bar" style="width:85%"></div></div>
+              <p class="mini mb-0">85% shoppers viewed this in the last 24h</p>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="intel-card p-3 h-100">
+              <h3 class="h6">Best value this week</h3>
+              <p class="small text-muted mb-2">Family grocery bundles</p>
+              <div class="progress soft mb-2"><div class="progress-bar" style="width:72%"></div></div>
+              <p class="mini mb-0">Average basket savings: $31</p>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="intel-card p-3 h-100">
+              <h3 class="h6">Running low soon</h3>
+              <p class="small text-muted mb-2">Gaming monitors 27&quot;</p>
+              <div class="progress soft mb-2"><div class="progress-bar" style="width:63%"></div></div>
+              <p class="mini mb-0">Only 37% of inventory remaining</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section py-5 reveal">
+      <div class="container">
+        <div class="section-head d-flex justify-content-between align-items-center mb-3">
+          <h2 class="section-title mb-0">Featured deals</h2>
+          <a href="#" class="section-link">See all</a>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+            <article class="product-card h-100" data-cat="electronics">
+              <div class="product-badge">Best seller</div>
+              <img src="https://picsum.photos/seed/laptop/360/280" class="img-fluid rounded-3 mb-2" alt="14 inch laptop">
+              <p class="small text-muted mb-1">Electronics</p>
+              <h3 class="h6 product-title">14&quot; Everyday Laptop, 8GB RAM</h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.4 (392)</div>
+              <p class="mb-1"><span class="price">$329.00</span> <span class="old-price">$399.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="14&quot; Everyday Laptop, 8GB RAM" data-price="$329.00" data-image="https://picsum.photos/seed/laptop/600/420">Quick view</button>
+              </div>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+            <article class="product-card h-100" data-cat="electronics">
+              <div class="product-badge">Rollback</div>
+              <img src="https://picsum.photos/seed/headphones/360/280" class="img-fluid rounded-3 mb-2" alt="wireless headphones">
+              <p class="small text-muted mb-1">Audio</p>
+              <h3 class="h6 product-title">Noise-Reducing Wireless Headphones</h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.6 (1208)</div>
+              <p class="mb-1"><span class="price">$49.00</span> <span class="old-price">$69.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Noise-Reducing Wireless Headphones" data-price="$49.00" data-image="https://picsum.photos/seed/headphones/600/420">Quick view</button>
+              </div>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+            <article class="product-card h-100" data-cat="home">
+              <div class="product-badge">Trending</div>
+              <img src="https://picsum.photos/seed/chair/360/280" class="img-fluid rounded-3 mb-2" alt="office chair">
+              <p class="small text-muted mb-1">Home office</p>
+              <h3 class="h6 product-title">Ergonomic Office Chair with Lumbar Support</h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.2 (610)</div>
+              <p class="mb-1"><span class="price">$119.00</span> <span class="old-price">$149.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Ergonomic Office Chair with Lumbar Support" data-price="$119.00" data-image="https://picsum.photos/seed/chair/600/420">Quick view</button>
+              </div>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+            <article class="product-card h-100" data-cat="home">
+              <div class="product-badge">Save 20%</div>
+              <img src="https://picsum.photos/seed/kettle/360/280" class="img-fluid rounded-3 mb-2" alt="electric kettle">
+              <p class="small text-muted mb-1">Kitchen</p>
+              <h3 class="h6 product-title">1.7L Stainless Steel Electric Kettle</h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.5 (702)</div>
+              <p class="mb-1"><span class="price">$24.00</span> <span class="old-price">$30.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="1.7L Stainless Steel Electric Kettle" data-price="$24.00" data-image="https://picsum.photos/seed/kettle/600/420">Quick view</button>
+              </div>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+            <article class="product-card h-100" data-cat="kids">
+              <div class="product-badge">Hot deal</div>
+              <img src="https://picsum.photos/seed/toy/360/280" class="img-fluid rounded-3 mb-2" alt="building blocks">
+              <p class="small text-muted mb-1">Toys</p>
+              <h3 class="h6 product-title">Creative Building Blocks Set, 500 Pieces</h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.7 (322)</div>
+              <p class="mb-1"><span class="price">$19.00</span> <span class="old-price">$24.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Creative Building Blocks Set, 500 Pieces" data-price="$19.00" data-image="https://picsum.photos/seed/toy/600/420">Quick view</button>
+              </div>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+            <article class="product-card h-100" data-cat="fitness">
+              <div class="product-badge">New</div>
+              <img src="https://picsum.photos/seed/watch/360/280" class="img-fluid rounded-3 mb-2" alt="fitness watch">
+              <p class="small text-muted mb-1">Wearables</p>
+              <h3 class="h6 product-title">Smart Fitness Watch with Heart Tracking</h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.3 (944)</div>
+              <p class="mb-1"><span class="price">$79.00</span> <span class="old-price">$99.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Smart Fitness Watch with Heart Tracking" data-price="$79.00" data-image="https://picsum.photos/seed/watch/600/420">Quick view</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-section py-5 reveal">
+      <div class="container">
+        <div class="section-head d-flex justify-content-between align-items-center mb-3">
+          <h2 class="section-title mb-0">Full ecommerce catalog</h2>
+          <div class="d-flex gap-2">
+            <button class="btn btn-sm btn-outline-primary rounded-pill" data-bs-toggle="offcanvas" data-bs-target="#wishlistCanvas">Wishlist <span id="wishlistCountInline">0</span></button>
+            <button class="btn btn-sm btn-primary rounded-pill" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas">Cart <span id="cartCountInline">0</span></button>
+          </div>
+        </div>
+
+        <div class="catalog-filters p-3 p-md-4 rounded-4 mb-4">
+          <div class="row g-2">
+            <div class="col-12 col-lg-4">
+              <input id="catalogSearch" class="form-control" type="search" placeholder="Search in catalog">
+            </div>
+            <div class="col-6 col-lg-2">
+              <select id="catalogCategory" class="form-select">
+                <option value="all">All categories</option>
+              </select>
+            </div>
+            <div class="col-6 col-lg-2">
+              <select id="catalogBrand" class="form-select">
+                <option value="all">All brands</option>
+              </select>
+            </div>
+            <div class="col-6 col-lg-2">
+              <select id="catalogSort" class="form-select">
+                <option value="featured">Sort: Featured</option>
+                <option value="price_low">Price: Low to high</option>
+                <option value="price_high">Price: High to low</option>
+                <option value="rating_high">Rating: High to low</option>
+                <option value="name_asc">Name: A to Z</option>
+              </select>
+            </div>
+            <div class="col-6 col-lg-2 d-grid">
+              <button id="clearCatalogFilters" class="btn btn-outline-secondary">Clear filters</button>
+            </div>
+          </div>
+
+          <div class="row g-2 mt-1 align-items-center">
+            <div class="col-12 col-md-8">
+              <label for="priceRange" class="small text-muted">Max price: <b id="priceRangeValue">$500</b></label>
+              <input type="range" class="form-range" id="priceRange" min="10" max="500" value="500" step="5">
+            </div>
+            <div class="col-12 col-md-4 text-md-end small text-muted">
+              Showing <span id="catalogCount">0</span> products
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3" id="catalogGrid"></div>
+        <nav class="mt-4" aria-label="Catalog pagination">
+          <ul class="pagination justify-content-center mb-0" id="catalogPagination"></ul>
+        </nav>
+      </div>
+    </section>
+
+    <section class="smart-reco py-5 reveal">
+      <div class="container">
+        <div class="section-head d-flex justify-content-between align-items-center mb-3">
+          <h2 class="section-title mb-0">Smart recommendations</h2>
+          <a href="#" class="section-link">See personalization settings</a>
+        </div>
+
+        <div class="filter-row d-flex flex-wrap gap-2 mb-4" role="tablist" aria-label="Recommendation filters">
+          <button class="filter-btn active" data-filter="all" type="button" aria-pressed="true">All</button>
+          <button class="filter-btn" data-filter="electronics" type="button" aria-pressed="false">Electronics</button>
+          <button class="filter-btn" data-filter="home" type="button" aria-pressed="false">Home</button>
+          <button class="filter-btn" data-filter="kids" type="button" aria-pressed="false">Kids</button>
+          <button class="filter-btn" data-filter="fitness" type="button" aria-pressed="false">Fitness</button>
+        </div>
+
+        <div class="row g-3" id="recoGrid">
+          <div class="col-6 col-md-4 col-lg-3 reco-item" data-cat="electronics"><div class="mini-product">4K webcam <span>$49</span></div></div>
+          <div class="col-6 col-md-4 col-lg-3 reco-item" data-cat="electronics"><div class="mini-product">Gaming keyboard <span>$59</span></div></div>
+          <div class="col-6 col-md-4 col-lg-3 reco-item" data-cat="home"><div class="mini-product">Bamboo shelf unit <span>$44</span></div></div>
+          <div class="col-6 col-md-4 col-lg-3 reco-item" data-cat="home"><div class="mini-product">Air fryer 5L <span>$64</span></div></div>
+          <div class="col-6 col-md-4 col-lg-3 reco-item" data-cat="kids"><div class="mini-product">Kids scooter <span>$58</span></div></div>
+          <div class="col-6 col-md-4 col-lg-3 reco-item" data-cat="kids"><div class="mini-product">STEM learning set <span>$29</span></div></div>
+          <div class="col-6 col-md-4 col-lg-3 reco-item" data-cat="fitness"><div class="mini-product">Yoga mat pro <span>$21</span></div></div>
+          <div class="col-6 col-md-4 col-lg-3 reco-item" data-cat="fitness"><div class="mini-product">Protein powder <span>$34</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="promo-row py-3 reveal">
+      <div class="container">
+        <div class="row g-3">
+          <div class="col-lg-6">
+            <article class="inline-promo rounded-4 p-4">
+              <p class="small text-uppercase fw-semibold mb-2">Home refresh</p>
+              <h3 class="h4 mb-2">Furniture and decor for every room</h3>
+              <p class="mb-3">Find modern pieces and practical storage with rollback pricing.</p>
+              <a href="#" class="btn btn-outline-primary rounded-pill">Shop home</a>
+            </article>
+          </div>
+          <div class="col-lg-6">
+            <article class="inline-promo rounded-4 p-4 alt">
+              <p class="small text-uppercase fw-semibold mb-2">Health and wellness</p>
+              <h3 class="h4 mb-2">Pharmacy essentials and daily care</h3>
+              <p class="mb-3">Stock up on vitamins, personal care, and over-the-counter basics.</p>
+              <a href="#" class="btn btn-outline-primary rounded-pill">Shop wellness</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="departments py-5 reveal">
+      <div class="container">
+        <div class="section-head d-flex justify-content-between align-items-center mb-3">
+          <h2 class="section-title mb-0">Shop by department</h2>
+          <a href="#" class="section-link">Browse all</a>
+        </div>
+        <div class="row g-3">
+          <div class="col-6 col-md-4 col-lg-3"><a href="#" class="dept-card d-block">Fresh groceries</a></div>
+          <div class="col-6 col-md-4 col-lg-3"><a href="#" class="dept-card d-block">Home decor</a></div>
+          <div class="col-6 col-md-4 col-lg-3"><a href="#" class="dept-card d-block">Baby essentials</a></div>
+          <div class="col-6 col-md-4 col-lg-3"><a href="#" class="dept-card d-block">Sports & outdoors</a></div>
+          <div class="col-6 col-md-4 col-lg-3"><a href="#" class="dept-card d-block">Health & wellness</a></div>
+          <div class="col-6 col-md-4 col-lg-3"><a href="#" class="dept-card d-block">Office supplies</a></div>
+          <div class="col-6 col-md-4 col-lg-3"><a href="#" class="dept-card d-block">Patio & garden</a></div>
+          <div class="col-6 col-md-4 col-lg-3"><a href="#" class="dept-card d-block">Automotive</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="brands py-5 reveal">
+      <div class="container">
+        <div class="section-head d-flex justify-content-between align-items-center mb-3">
+          <h2 class="section-title mb-0">Popular brands</h2>
+          <a href="#" class="section-link">Shop brand stores</a>
+        </div>
+        <div class="row g-3">
+          <div class="col-6 col-md-3"><div class="brand-tile">Great Value</div></div>
+          <div class="col-6 col-md-3"><div class="brand-tile">onn.</div></div>
+          <div class="col-6 col-md-3"><div class="brand-tile">Mainstays</div></div>
+          <div class="col-6 col-md-3"><div class="brand-tile">Equate</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-banner py-5 reveal">
+      <div class="container">
+        <div class="app-card rounded-4 p-4 p-md-5 d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center gap-3">
+          <div>
+            <p class="small text-uppercase fw-bold mb-2">Walmart App</p>
+            <h2 class="mb-2">Get order updates and faster checkout</h2>
+            <p class="mb-0">Scan, pay, and reorder in seconds with the Walmart mobile app.</p>
+          </div>
+          <div class="d-flex gap-2 flex-wrap">
+            <a href="#" class="btn btn-warning rounded-pill px-4">Download app</a>
+            <a href="#" class="btn btn-light rounded-pill px-4">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter py-5 reveal">
+      <div class="container">
+        <div class="newsletter-wrap rounded-4 p-4 p-md-5">
+          <div class="row g-3 align-items-center">
+            <div class="col-lg-7">
+              <h2 class="mb-2">Be first to know about weekly deals</h2>
+              <p class="mb-0">Get updates on savings events, limited offers, and member-exclusive discounts.</p>
+            </div>
+            <div class="col-lg-5">
+              <form id="newsletterForm" class="input-group" novalidate>
+                <input id="newsletterEmail" type="email" class="form-control" placeholder="Enter your email" required>
+                <button class="btn btn-primary" type="submit">Subscribe</button>
+              </form>
+              <p id="newsletterMessage" class="small mt-2 mb-0" aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-2">
+          <h4 class="h6">Get to know us</h4>
+          <ul class="list-unstyled small mb-0">
+            <li><a href="#">Our company</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Suppliers</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h4 class="h6">Help</h4>
+          <ul class="list-unstyled small mb-0">
+            <li><a href="#">Track order</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h4 class="h6">Services</h4>
+          <ul class="list-unstyled small mb-0">
+            <li><a href="#">Pharmacy</a></li>
+            <li><a href="#">Photo center</a></li>
+            <li><a href="#">Gift cards</a></li>
+            <li><a href="#">Auto care</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2">
+          <h4 class="h6">Account</h4>
+          <ul class="list-unstyled small mb-0">
+            <li><a href="#">Sign in</a></li>
+            <li><a href="#">Purchase history</a></li>
+            <li><a href="#">Lists</a></li>
+            <li><a href="#">Registry</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h4 class="h6">Connect</h4>
+          <p class="small mb-2">Follow us for weekly savings drops and seasonal shopping tips.</p>
+          <div class="socials d-flex gap-2 mb-3">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="Youtube"><i class="bi bi-youtube"></i></a>
+          </div>
+          <button class="btn btn-sm btn-outline-light rounded-pill px-3">Sign up for updates</button>
+        </div>
+      </div>
+
+      <hr class="my-4 border-light-subtle">
+      <ul class="footer-legal list-unstyled d-flex flex-wrap gap-3 small mb-2">
+        <li><a href="#">Privacy policy</a></li>
+        <li><a href="#">Terms of use</a></li>
+        <li><a href="#">California privacy rights</a></li>
+        <li><a href="#">Your privacy choices</a></li>
+      </ul>
+      <p class="small mb-0">© 2026 Walmart-inspired demo homepage. Built with HTML, CSS, JS, jQuery, and Bootstrap.</p>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="quickViewTitle">Product preview</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img id="quickViewImage" src="" class="img-fluid rounded-3 mb-3" alt="Product image">
+          <h6 id="quickViewName" class="mb-1"></h6>
+          <p id="quickViewPrice" class="mb-0 fw-bold text-primary"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="wishlistCanvas" aria-labelledby="wishlistCanvasLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="wishlistCanvasLabel">Wishlist</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <div id="wishlistItems" class="mb-3"></div>
+      <button id="clearWishlist" class="btn btn-outline-secondary mt-auto">Clear wishlist</button>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartCanvas" aria-labelledby="cartCanvasLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="cartCanvasLabel">Shopping cart</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <div id="cartItems" class="mb-3"></div>
+      <div class="cart-summary p-3 rounded-3 mt-auto">
+        <div class="d-flex justify-content-between small mb-1"><span>Subtotal</span><b id="cartSubtotal">$0.00</b></div>
+        <div class="d-flex justify-content-between small mb-1"><span>Discount</span><b id="cartDiscount">$0.00</b></div>
+        <div class="d-flex justify-content-between small mb-2"><span>Estimated total</span><b id="cartTotal">$0.00</b></div>
+        <div class="input-group mb-2">
+          <input id="couponInput" class="form-control" type="text" placeholder="Coupon code (SAVE10)">
+          <button id="applyCoupon" class="btn btn-outline-primary" type="button">Apply</button>
+        </div>
+        <button id="openCheckout" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#checkoutModal">Proceed to checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="compareModal" tabindex="-1" aria-labelledby="compareModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="compareModalLabel">Compare products</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="compareContent"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="checkoutModalLabel">Checkout</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="checkoutForm" class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">First name</label>
+              <input class="form-control" name="firstName" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Last name</label>
+              <input class="form-control" name="lastName" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Email</label>
+              <input class="form-control" name="email" type="email" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Address</label>
+              <input class="form-control" name="address" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">City</label>
+              <input class="form-control" name="city" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">State</label>
+              <input class="form-control" name="state" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">ZIP</label>
+              <input class="form-control" name="zip" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Payment method</label>
+              <select class="form-select" name="payment" required>
+                <option value="">Select method</option>
+                <option>Credit Card</option>
+                <option>Debit Card</option>
+                <option>Cash on Delivery</option>
+                <option>Wallet</option>
+              </select>
+            </div>
+            <div class="col-12 d-grid">
+              <button class="btn btn-primary" type="submit">Place order</button>
+            </div>
+            <div class="col-12">
+              <p id="checkoutMessage" class="small mb-0"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="appToast" class="toast align-items-center border-0" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="toastText">Done</div>
+        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
