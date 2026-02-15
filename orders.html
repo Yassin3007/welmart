@@ -12,15 +12,28 @@
   <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-  <header class="store-header">
-    <div class="container py-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
-      <a class="brand d-inline-flex align-items-center text-decoration-none" href="index.html"><span class="brand-mark">✶</span><span class="brand-name ms-2">Walmart</span></a>
-      <nav class="d-flex flex-wrap gap-2">
-        <a class="btn btn-sm btn-light" href="index.html">Home</a>
-        <a class="btn btn-sm btn-light" href="account.html">Account</a>
-        <a class="btn btn-sm btn-warning" href="orders.html">Orders</a>
-        <a class="btn btn-sm btn-light" href="contact.html">Support</a>
-      </nav>
+    <header class="safqa-header">
+    <div class="container">
+      <div class="safqa-header-inner">
+        <a class="safqa-brand" href="index.html" aria-label="Safqqa home">
+          <span class="safqa-logo"><i class="bi bi-record-circle"></i></span>
+          <span class="safqa-name">SAFQQA</span>
+        </a>
+
+        <form class="safqa-search" role="search" aria-label="Site search" autocomplete="off">
+          <button class="safqa-search-icon" type="submit"><i class="bi bi-search"></i></button>
+          <input type="search" placeholder="Search everything at Walmart online and in store">
+        </form>
+
+        <div class="safqa-actions">
+          <a class="safqa-action" href="wishlist.html"><i class="bi bi-heart"></i><span>Favorites<br><b>My items</b></span></a>
+          <a class="safqa-action" href="signin.html"><i class="bi bi-person"></i><span>Sign in<br><b>Account</b></span></a>
+          <a class="safqa-cart" href="cart.html" aria-label="Cart">
+            <span class="safqa-cart-icon"><i class="bi bi-cart3"></i><b id="cartCount">0</b></span>
+            <span class="safqa-cart-total">399.00 LE</span>
+          </a>
+        </div>
+      </div>
     </div>
   </header>
 

@@ -1,4 +1,14 @@
 $(function () {
+  function t(text) {
+    return window.WM_I18N && typeof window.WM_I18N.t === "function" ? window.WM_I18N.t(text) : text;
+  }
+
+  function translatePage() {
+    if (window.WM_I18N && typeof window.WM_I18N.translatePage === "function") {
+      window.WM_I18N.translatePage();
+    }
+  }
+
   var keys = {
     cart: "wm_demo_cart",
     wishlist: "wm_demo_wishlist",
@@ -57,14 +67,14 @@ $(function () {
 
     var wishlist = read(keys.wishlist, []);
     if (!wishlist.length) {
-      $root.html('<p class="text-muted mb-0">Your wishlist is empty. <a href="shop.html">Browse products</a>.</p>');
+      $root.html('<p class="text-muted mb-0">' + t("Your wishlist is empty.") + ' <a href="shop.html">' + t("Browse products") + '</a>.</p>');
       return;
     }
 
     var html = wishlist.map(function (id) {
       var p = products[id];
       if (!p) return "";
-      return '<div class="line-item mb-2 p-2 rounded-3 d-flex justify-content-between align-items-center"><div><div class="fw-semibold small">' + p.name + '</div><div class="small text-muted">' + money(p.price) + '</div></div><div class="d-flex gap-1"><button class="btn btn-sm btn-outline-primary move-wishlist-cart" data-id="' + id + '">Move to cart</button><button class="btn btn-sm btn-outline-secondary remove-wishlist-page" data-id="' + id + '">Remove</button></div></div>';
+      return '<div class="line-item mb-2 p-2 rounded-3 d-flex justify-content-between align-items-center"><div><div class="fw-semibold small">' + p.name + '</div><div class="small text-muted">' + money(p.price) + '</div></div><div class="d-flex gap-1"><button class="btn btn-sm btn-outline-primary move-wishlist-cart" data-id="' + id + '">' + t("Move to cart") + '</button><button class="btn btn-sm btn-outline-secondary remove-wishlist-page" data-id="' + id + '">' + t("Remove") + '</button></div></div>';
     }).join("");
 
     $root.html(html);
@@ -79,13 +89,46 @@ $(function () {
 
     var ids = Object.keys(cart);
     if (!ids.length) {
-      $root.html('<p class="text-muted mb-0">Your cart is empty. <a href="shop.html">Start shopping</a>.</p>');
+      $root.html('<p class="text-muted mb-0">' + t("Your cart is empty.") + ' <a href="shop.html">' + t("Start shopping") + '</a>.</p>');
     } else {
       var html = ids.map(function (id) {
         var p = products[id];
         if (!p) return "";
         var qty = Number(cart[id]);
-        return '<div class="line-item mb-2 p-2 rounded-3"><div class="d-flex justify-content-between"><div><div class="fw-semibold small">' + p.name + '</div><div class="small text-muted">' + money(p.price) + ' each</div></div><button class="btn btn-sm btn-outline-secondary remove-cart-page" data-id="' + id + '"><i class="bi bi-trash"></i></button></div><div class="d-flex justify-content-between align-items-center mt-2"><div class="d-flex align-items-center gap-1"><button class="btn btn-sm btn-light dec-cart-page" data-id="' + id + '">-</button><span class="small px-1">' + qty + '</span><button class="btn btn-sm btn-light inc-cart-page" data-id="' + id + '">+</button></div><b class="small">' + money(p.price * qty) + '</b></div></div>';
+        var img = p.image || "https://picsum.photos/seed/cart/140/120";
+        return [
+          '<div class="cart-line">',
+          '  <div class="cart-line-media">',
+          '    <img src="' + img + '" alt="' + p.name + '">',
+          '  </div>',
+          '  <div class="cart-line-body">',
+          '    <div class="d-flex justify-content-between gap-2 flex-wrap">',
+          '      <div>',
+          '        <div class="fw-semibold">' + p.name + '</div>',
+          '        <div class="small text-muted">' + t("Sold & shipped by Walmart") + '</div>',
+          '      </div>',
+          '      <div class="text-end">',
+          '        <div class="fw-semibold">' + money(p.price) + '</div>',
+          '        <div class="small text-muted">(' + qty + ' ' + t("item") + ')</div>',
+          '      </div>',
+          '    </div>',
+          '    <div class="cart-line-meta">',
+          '      <div class="meta-pill">' + t("1000+ bought since yesterday") + '</div>',
+          '      <div class="meta-pill">' + t("Best seller") + '</div>',
+          '    </div>',
+          '    <div class="cart-line-actions">',
+          '      <button class="btn btn-sm btn-link text-muted remove-cart-page" data-id="' + id + '">' + t("Remove") + '</button>',
+          '      <button class="btn btn-sm btn-link text-muted">' + t("Save for later") + '</button>',
+          '      <div class="qty-stepper">',
+          '        <button class="btn btn-light btn-sm dec-cart-page" data-id="' + id + '">-</button>',
+          '        <span>' + qty + '</span>',
+          '        <button class="btn btn-light btn-sm inc-cart-page" data-id="' + id + '">+</button>',
+          '      </div>',
+          '      <div class="line-total">' + money(p.price * qty) + '</div>',
+          '    </div>',
+          '  </div>',
+          '</div>'
+        ].join("");
       }).join("");
       $root.html(html);
     }
@@ -95,6 +138,7 @@ $(function () {
     $("#cartPageDiscount").text("-" + money(s.discount));
     $("#cartPageTotal").text(money(s.total));
     $("#couponPageInput").val(coupon);
+    $("#cartPageCount").text("(" + Object.keys(cart).length + " " + t("items") + ")");
   }
 
   function renderCheckoutPage() {
@@ -109,7 +153,7 @@ $(function () {
       return '<div class="d-flex justify-content-between mb-1"><span>' + p.name + ' x' + cart[id] + '</span><b>' + money(p.price * Number(cart[id])) + '</b></div>';
     }).join("");
 
-    $box.html(lines || '<p class="mb-0 text-muted">No items in cart.</p>');
+    $box.html(lines || '<p class="mb-0 text-muted">' + t("No items in cart.") + '</p>');
 
     var s = summary(cart, coupon);
     $("#checkoutSubtotal").text(money(s.subtotal));
@@ -123,30 +167,30 @@ $(function () {
 
     var orders = read(keys.orders, []);
     if (!orders.length) {
-      $table.html('<tr><td colspan="5" class="text-muted small">No orders yet.</td></tr>');
+      $table.html('<tr><td colspan="5" class="text-muted small">' + t("No orders yet.") + '</td></tr>');
       return;
     }
 
     $table.html(orders.map(function (o) {
-      return '<tr><td>#' + o.id + '</td><td>' + o.date + '</td><td><span class="badge text-bg-success">' + o.status + '</span></td><td>' + money(o.total) + '</td><td><button class="btn btn-sm btn-outline-secondary">Details</button></td></tr>';
+      return '<tr><td>#' + o.id + '</td><td>' + o.date + '</td><td><span class="badge text-bg-success">' + t(o.status) + '</span></td><td>' + money(o.total) + '</td><td><button class="btn btn-sm btn-outline-secondary">' + t("Details") + '</button></td></tr>';
     }).join(""));
   }
 
   function handleForms() {
     $("#contactForm").on("submit", function (e) {
       e.preventDefault();
-      $("#contactMessage").text("Message sent successfully. Support will contact you soon.").addClass("text-success");
+      $("#contactMessage").text(t("Message sent successfully. Support will contact you soon.")).addClass("text-success");
       this.reset();
     });
 
     $("#loginForm").on("submit", function (e) {
       e.preventDefault();
-      $("#loginMessage").text("Signed in successfully.").addClass("text-success");
+      $("#loginMessage").text(t("Signed in successfully.")).addClass("text-success");
     });
 
     $("#registerForm").on("submit", function (e) {
       e.preventDefault();
-      $("#registerMessage").text("Account created successfully.").addClass("text-success");
+      $("#registerMessage").text(t("Account created successfully.")).addClass("text-success");
       this.reset();
     });
 
@@ -156,7 +200,7 @@ $(function () {
       var coupon = localStorage.getItem(keys.coupon) || "";
       var s = summary(cart, coupon);
       if (!Object.keys(cart).length) {
-        $("#checkoutStandaloneMessage").text("Cart is empty.").addClass("text-danger");
+        $("#checkoutStandaloneMessage").text(t("Cart is empty.")).addClass("text-danger");
         return;
       }
 
@@ -164,14 +208,14 @@ $(function () {
       orders.unshift({
         id: Math.floor(Math.random() * 900000 + 100000),
         date: new Date().toISOString().slice(0, 10),
-        status: "Processing",
+        status: t("Processing"),
         total: s.total
       });
       write(keys.orders, orders);
       write(keys.cart, {});
       localStorage.setItem(keys.coupon, "");
       this.reset();
-      $("#checkoutStandaloneMessage").text("Order placed successfully.").removeClass("text-danger").addClass("text-success");
+      $("#checkoutStandaloneMessage").text(t("Order placed successfully.")).removeClass("text-danger").addClass("text-success");
       renderCheckoutPage();
     });
   }
@@ -202,6 +246,22 @@ $(function () {
     renderCartPage();
   });
 
+  $(document).on("click", "#pickupToggle", function () {
+    var $options = $("#pickupOptions");
+    $options.toggleClass("is-collapsed");
+    var $icon = $(this).find(".bi-chevron-down, .bi-chevron-up");
+    if ($options.hasClass("is-collapsed")) {
+      $icon.removeClass("bi-chevron-up").addClass("bi-chevron-down");
+    } else {
+      $icon.removeClass("bi-chevron-down").addClass("bi-chevron-up");
+    }
+  });
+
+  $(document).on("click", ".pickup-card", function () {
+    $(".pickup-card").removeClass("active");
+    $(this).addClass("active");
+  });
+
   $(document).on("click", ".remove-wishlist-page", function () {
     var id = Number($(this).data("id"));
     var wishlist = read(keys.wishlist, []).filter(function (item) { return item !== id; });
@@ -227,7 +287,7 @@ $(function () {
   $("#applyPageCoupon").on("click", function () {
     var code = ($("#couponPageInput").val() || "").trim().toUpperCase();
     if (code && code !== "SAVE10") {
-      alert("Invalid coupon code");
+      alert(t("Invalid coupon code"));
       return;
     }
     localStorage.setItem(keys.coupon, code);
@@ -239,4 +299,5 @@ $(function () {
   renderCheckoutPage();
   renderOrdersPage();
   handleForms();
+  translatePage();
 });

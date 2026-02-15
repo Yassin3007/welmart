@@ -12,36 +12,359 @@
   <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-  <header class="store-header">
-    <div class="container py-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
-      <a class="brand d-inline-flex align-items-center text-decoration-none" href="index.html"><span class="brand-mark">✶</span><span class="brand-name ms-2">Walmart</span></a>
-      <nav class="d-flex flex-wrap gap-2">
-        <a class="btn btn-sm btn-light" href="index.html">Home</a>
-        <a class="btn btn-sm btn-light" href="shop.html">Shop</a>
-        <a class="btn btn-sm btn-warning" href="cart.html">Cart</a>
-        <a class="btn btn-sm btn-light" href="checkout.html">Checkout</a>
-      </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="safqa-header">
+    <div class="container">
+      <div class="safqa-header-inner">
+        <a class="safqa-brand" href="index.html" aria-label="Safqqa home">
+          <span class="safqa-logo"><i class="bi bi-record-circle"></i></span>
+          <span class="safqa-name">SAFQQA</span>
+        </a>
+
+        <form class="safqa-search" role="search" aria-label="Site search" autocomplete="off">
+          <button class="safqa-search-icon" type="submit"><i class="bi bi-search"></i></button>
+          <input type="search" placeholder="Search everything at Walmart online and in store">
+        </form>
+
+        <div class="safqa-actions">
+          <a class="safqa-action" href="wishlist.html"><i class="bi bi-heart"></i><span>Favorites<br><b>My items</b></span></a>
+          <a class="safqa-action" href="signin.html"><i class="bi bi-person"></i><span>Sign in<br><b>Account</b></span></a>
+          <a class="safqa-cart" href="cart.html" aria-label="Cart">
+            <span class="safqa-cart-icon"><i class="bi bi-cart3"></i><b id="cartCount">0</b></span>
+            <span class="safqa-cart-total">399.00 LE</span>
+          </a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main class="py-5">
+  <main id="main" class="py-4 cart-page">
     <div class="container">
       <div class="row g-4">
         <div class="col-lg-8">
-          <h1 class="section-title mb-3">Shopping cart</h1>
-          <div id="cartPageItems" class="catalog-filters rounded-4 p-3 p-md-4"></div>
+          <div class="cart-header mb-3">
+            <div>
+              <h1 class="section-title mb-1">Cart <span id="cartPageCount" class="text-muted small">(0 items)</span></h1>
+              <button id="pickupToggle" class="pickup-toggle btn btn-light btn-sm" type="button"><i class="bi bi-truck"></i> Pickup and delivery options <i class="bi bi-chevron-down"></i></button>
+            </div>
+            <a href="shop.html" class="btn btn-sm btn-outline-primary">Continue shopping</a>
+          </div>
+
+          <div id="pickupOptions" class="pickup-options card-soft mb-3 is-collapsed">
+            <div class="pickup-grid">
+              <button class="pickup-card" type="button">
+                <span class="pickup-card-icon"><i class="bi bi-box-seam"></i></span>
+                <span class="fw-semibold">Shipping</span>
+                <span class="small text-muted">Not available</span>
+              </button>
+              <button class="pickup-card active" type="button">
+                <span class="pickup-card-icon"><i class="bi bi-shop-window"></i></span>
+                <span class="fw-semibold">Pickup</span>
+                <span class="small text-muted">Available</span>
+              </button>
+              <button class="pickup-card" type="button">
+                <span class="pickup-card-icon"><i class="bi bi-bicycle"></i></span>
+                <span class="fw-semibold">Delivery</span>
+                <span class="small text-muted">Not available</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="cartPageItems" class="cart-items card-soft"></div>
+
+          <section class="cart-reco card-soft mt-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h2 class="h6 mb-0">Add your essentials</h2>
+              <button class="icon-btn"><i class="bi bi-chevron-right"></i></button>
+            </div>
+            <div class="row g-3">
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="mini-reco">
+                  <span class="badge text-bg-light">Best seller</span>
+                  <img src="https://picsum.photos/seed/wipes/220/180" alt="Wipes">
+                  <button class="btn btn-sm btn-primary w-100 mt-2"><i class="bi bi-plus-lg"></i> Add</button>
+                  <div class="fw-semibold mt-2">$4.48</div>
+                  <p class="small mb-1">Disinfecting Wipes</p>
+                  <div class="rating-stars small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted">(857)</span></div>
+                  <div class="save-with">Save with W+</div>
+                  <p class="mini-reco-desc">Fresh lemon scent, 300-count pack for kitchens and high-touch areas.</p>
+                  <div class="ship-estimates">
+                    <div><span>Pickup:</span> Ready in 2 hours</div>
+                    <div><span>Delivery:</span> Today, 3–5 pm</div>
+                    <div><span>Shipping:</span> Arrives Wed</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="mini-reco">
+                  <span class="badge text-bg-light">Best seller</span>
+                  <img src="https://picsum.photos/seed/soap/220/180" alt="Soap">
+                  <button class="btn btn-sm btn-primary w-100 mt-2"><i class="bi bi-plus-lg"></i> Add</button>
+                  <div class="fw-semibold mt-2">$2.94</div>
+                  <p class="small mb-1">Dish Soap</p>
+                  <div class="rating-stars small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i> <span class="text-muted">(299)</span></div>
+                  <div class="save-with">Save with W+</div>
+                  <p class="mini-reco-desc">Ultra-grease fighting formula with a clean citrus finish.</p>
+                  <div class="ship-estimates">
+                    <div><span>Pickup:</span> Ready in 2 hours</div>
+                    <div><span>Delivery:</span> Today, 5–7 pm</div>
+                    <div><span>Shipping:</span> Arrives Thu</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="mini-reco">
+                  <span class="badge text-bg-light">Best seller</span>
+                  <img src="https://picsum.photos/seed/protein/220/180" alt="Protein">
+                  <button class="btn btn-sm btn-primary w-100 mt-2"><i class="bi bi-plus-lg"></i> Add</button>
+                  <div class="fw-semibold mt-2">$3.27</div>
+                  <p class="small mb-1">Protein Shake</p>
+                  <div class="rating-stars small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i> <span class="text-muted">(706)</span></div>
+                  <div class="save-with">Save with W+</div>
+                  <p class="mini-reco-desc">Vanilla 30g protein shake, ready-to-drink, 11 fl oz.</p>
+                  <div class="ship-estimates">
+                    <div><span>Pickup:</span> Ready in 1 hour</div>
+                    <div><span>Delivery:</span> Today, 4–6 pm</div>
+                    <div><span>Shipping:</span> Arrives Wed</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="mini-reco">
+                  <span class="badge text-bg-light">Best seller</span>
+                  <img src="https://picsum.photos/seed/tooth/220/180" alt="Toothpaste">
+                  <button class="btn btn-sm btn-primary w-100 mt-2"><i class="bi bi-plus-lg"></i> Add</button>
+                  <div class="fw-semibold mt-2">$6.97</div>
+                  <p class="small mb-1">Whitening Toothpaste</p>
+                  <div class="rating-stars small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted">(2195)</span></div>
+                  <div class="save-with">Save with W+</div>
+                  <p class="mini-reco-desc">Enamel-safe whitening with fresh mint flavor.</p>
+                  <div class="ship-estimates">
+                    <div><span>Pickup:</span> Ready in 2 hours</div>
+                    <div><span>Delivery:</span> Today, 6–8 pm</div>
+                    <div><span>Shipping:</span> Arrives Fri</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="cart-reco card-soft mt-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h2 class="h6 mb-0">Popular items in your area</h2>
+              <button class="icon-btn"><i class="bi bi-chevron-right"></i></button>
+            </div>
+            <div class="row g-3">
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="mini-reco">
+                  <span class="badge text-bg-light">Best seller</span>
+                  <img src="https://picsum.photos/seed/pasta/220/180" alt="Pasta">
+                  <button class="btn btn-sm btn-primary w-100 mt-2"><i class="bi bi-plus-lg"></i> Add</button>
+                  <div class="fw-semibold mt-2">$5.47</div>
+                  <p class="small mb-1">Pasta Dinner Kit</p>
+                  <div class="rating-stars small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted">(1024)</span></div>
+                  <div class="save-with">Save with W+</div>
+                  <p class="mini-reco-desc">Family-size pasta kit with marinara and parmesan.</p>
+                  <div class="ship-estimates">
+                    <div><span>Pickup:</span> Ready in 2 hours</div>
+                    <div><span>Delivery:</span> Today, 5–7 pm</div>
+                    <div><span>Shipping:</span> Arrives Thu</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="mini-reco">
+                  <span class="badge text-bg-light">Best seller</span>
+                  <img src="https://picsum.photos/seed/foil/220/180" alt="Foil">
+                  <button class="btn btn-sm btn-primary w-100 mt-2"><i class="bi bi-plus-lg"></i> Add</button>
+                  <div class="fw-semibold mt-2">$4.97</div>
+                  <p class="small mb-1">Heavy Duty Foil</p>
+                  <div class="rating-stars small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i> <span class="text-muted">(249)</span></div>
+                  <div class="save-with">Save with W+</div>
+                  <p class="mini-reco-desc">Extra-strong foil for grilling, baking, and storage.</p>
+                  <div class="ship-estimates">
+                    <div><span>Pickup:</span> Ready in 1 hour</div>
+                    <div><span>Delivery:</span> Today, 4–6 pm</div>
+                    <div><span>Shipping:</span> Arrives Wed</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="mini-reco">
+                  <span class="badge text-bg-light">Best seller</span>
+                  <img src="https://picsum.photos/seed/gift/220/180" alt="Gift card">
+                  <button class="btn btn-sm btn-primary w-100 mt-2"><i class="bi bi-plus-lg"></i> Add</button>
+                  <div class="fw-semibold mt-2">$25.00</div>
+                  <p class="small mb-1">Gift Card</p>
+                  <div class="rating-stars small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <span class="text-muted">(320)</span></div>
+                  <div class="save-with">Save with W+</div>
+                  <p class="mini-reco-desc">Send a digital gift card instantly or pick up in store.</p>
+                  <div class="ship-estimates">
+                    <div><span>Pickup:</span> Ready in 30 min</div>
+                    <div><span>Delivery:</span> Today, 6–8 pm</div>
+                    <div><span>Shipping:</span> Arrives Wed</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="mini-reco">
+                  <span class="badge text-bg-light">Best seller</span>
+                  <img src="https://picsum.photos/seed/hangers/220/180" alt="Hangers">
+                  <button class="btn btn-sm btn-primary w-100 mt-2"><i class="bi bi-plus-lg"></i> Add</button>
+                  <div class="fw-semibold mt-2">$2.98</div>
+                  <p class="small mb-1">Plastic Hangers</p>
+                  <div class="rating-stars small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i> <span class="text-muted">(870)</span></div>
+                  <div class="save-with">Save with W+</div>
+                  <p class="mini-reco-desc">Durable 10-pack with notches for straps.</p>
+                  <div class="ship-estimates">
+                    <div><span>Pickup:</span> Ready in 2 hours</div>
+                    <div><span>Delivery:</span> Today, 5–7 pm</div>
+                    <div><span>Shipping:</span> Arrives Thu</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="cart-reco explore-picks card-soft mt-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h2 class="h6 mb-0">Explore picks for you</h2>
+              <button class="icon-btn"><i class="bi bi-chevron-right"></i></button>
+            </div>
+            <div class="row g-3">
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="mini-reco">
+                  <span class="badge text-bg-light">Best seller</span>
+                  <img src="https://picsum.photos/seed/grill/220/180" alt="Grill brush">
+                  <button class="btn btn-sm btn-primary w-100 mt-2"><i class="bi bi-plus-lg"></i> Add</button>
+                  <div class="fw-semibold mt-2">$5.97</div>
+                  <p class="small mb-1">Expert Grill 3 in 1 Cleaning Brush</p>
+                  <div class="rating-stars small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted">(1046)</span></div>
+                  <div class="save-with">Save with W+</div>
+                  <p class="mini-reco-desc">Stiff bristles with scraper edge for deep clean.</p>
+                  <div class="ship-estimates">
+                    <div><span>Pickup:</span> Ready in 2 hours</div>
+                    <div><span>Delivery:</span> Today, 5–7 pm</div>
+                    <div><span>Shipping:</span> Arrives Thu</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="mini-reco">
+                  <span class="badge text-bg-light">Best seller</span>
+                  <img src="https://picsum.photos/seed/cloth/220/180" alt="Plastic drop cloth">
+                  <button class="btn btn-sm btn-primary w-100 mt-2"><i class="bi bi-plus-lg"></i> Add</button>
+                  <div class="fw-semibold mt-2">$1.86</div>
+                  <p class="small mb-1">Husky 0.7 mil Clear Plastic Drop Cloth</p>
+                  <div class="rating-stars small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i> <span class="text-muted">(542)</span></div>
+                  <div class="save-with">Save with W+</div>
+                  <p class="mini-reco-desc">Lightweight protection for painting and storage.</p>
+                  <div class="ship-estimates">
+                    <div><span>Pickup:</span> Ready in 1 hour</div>
+                    <div><span>Delivery:</span> Today, 4–6 pm</div>
+                    <div><span>Shipping:</span> Arrives Wed</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="mini-reco">
+                  <span class="badge text-bg-light">Best seller</span>
+                  <img src="https://picsum.photos/seed/brush/220/180" alt="Scrub brush">
+                  <button class="btn btn-sm btn-primary w-100 mt-2"><i class="bi bi-plus-lg"></i> Add</button>
+                  <div class="fw-semibold mt-2"><span class="text-success">Now $6.98</span> <span class="text-muted text-decoration-line-through small">$7.99</span></div>
+                  <p class="small mb-1">Libman High Power Scrub Brush</p>
+                  <div class="rating-stars small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted">(465)</span></div>
+                  <div class="save-with">Save with W+</div>
+                  <p class="mini-reco-desc">Ergonomic handle with heavy-duty bristles.</p>
+                  <div class="ship-estimates">
+                    <div><span>Pickup:</span> Ready in 2 hours</div>
+                    <div><span>Delivery:</span> Today, 6–8 pm</div>
+                    <div><span>Shipping:</span> Arrives Thu</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="mini-reco">
+                  <span class="badge text-bg-light">Best seller</span>
+                  <img src="https://picsum.photos/seed/dropcloth/220/180" alt="Drop cloth">
+                  <button class="btn btn-sm btn-primary w-100 mt-2"><i class="bi bi-plus-lg"></i> Add</button>
+                  <div class="fw-semibold mt-2">$4.97</div>
+                  <p class="small mb-1">Husky Clear Plastic Drop Cloth</p>
+                  <div class="rating-stars small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i> <span class="text-muted">(1164)</span></div>
+                  <div class="save-with">Save with W+</div>
+                  <p class="mini-reco-desc">All-purpose coverage for paint and renovation.</p>
+                  <div class="ship-estimates">
+                    <div><span>Pickup:</span> Ready in 2 hours</div>
+                    <div><span>Delivery:</span> Today, 5–7 pm</div>
+                    <div><span>Shipping:</span> Arrives Fri</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="mini-reco">
+                  <span class="badge text-bg-light">Best seller</span>
+                  <img src="https://picsum.photos/seed/tile/220/180" alt="Tile brush">
+                  <button class="btn btn-sm btn-primary w-100 mt-2"><i class="bi bi-plus-lg"></i> Add</button>
+                  <div class="fw-semibold mt-2">$2.46</div>
+                  <p class="small mb-1">Great Value Tile & Grout Brush</p>
+                  <div class="rating-stars small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i> <span class="text-muted">(1295)</span></div>
+                  <div class="save-with">Save with W+</div>
+                  <p class="mini-reco-desc">Angled bristles for grout lines and corners.</p>
+                  <div class="ship-estimates">
+                    <div><span>Pickup:</span> Ready in 1 hour</div>
+                    <div><span>Delivery:</span> Today, 4–6 pm</div>
+                    <div><span>Shipping:</span> Arrives Wed</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
         <div class="col-lg-4">
-          <div class="cart-summary p-3 rounded-3 sticky-top" style="top: 1rem;">
-            <h2 class="h5">Order summary</h2>
-            <div class="d-flex justify-content-between small mb-1"><span>Subtotal</span><b id="cartPageSubtotal">$0.00</b></div>
-            <div class="d-flex justify-content-between small mb-1"><span>Discount</span><b id="cartPageDiscount">$0.00</b></div>
-            <div class="d-flex justify-content-between small mb-2"><span>Total</span><b id="cartPageTotal">$0.00</b></div>
-            <div class="input-group mb-2">
-              <input id="couponPageInput" class="form-control" type="text" placeholder="Coupon code (SAVE10)">
-              <button id="applyPageCoupon" class="btn btn-outline-primary" type="button">Apply</button>
+          <div class="checkout-card card-soft sticky-top" style="top: 10rem;">
+            <div class="checkout-header">
+              <a href="checkout.html" class="btn btn-primary w-100">Continue to checkout</a>
+              <p class="small text-muted mb-0">For the best shopping experience, <a href="signin.html">sign in</a>.</p>
             </div>
-            <a href="checkout.html" class="btn btn-primary w-100">Go to checkout</a>
+
+            <div class="checkout-body">
+              <div class="d-flex justify-content-between small mb-1"><span>Subtotal</span><b id="cartPageSubtotal">$0.00</b></div>
+              <div class="d-flex justify-content-between small mb-1"><span>Discount</span><b id="cartPageDiscount">$0.00</b></div>
+              <div class="d-flex justify-content-between small mb-2"><span>Estimated total</span><b id="cartPageTotal">$0.00</b></div>
+              <div class="input-group mb-3">
+                <input id="couponPageInput" class="form-control" type="text" placeholder="Coupon code (SAVE10)">
+                <button id="applyPageCoupon" class="btn btn-outline-primary" type="button">Apply</button>
+              </div>
+              <div class="small text-muted">Taxes calculated at checkout.</div>
+            </div>
+
+            <div class="checkout-perks">
+              <div class="d-flex align-items-start gap-2">
+                <i class="bi bi-stars"></i>
+                <div>
+                  <div class="fw-semibold small">Become a member to get free same-day delivery</div>
+                  <div class="small text-muted">Try Walmart+ free for 30 days</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="gift-box">
+              <label class="form-check d-flex align-items-center gap-2">
+                <input class="form-check-input mt-0" type="checkbox">
+                <span class="small">This order is a gift.</span>
+              </label>
+              <i class="bi bi-gift"></i>
+            </div>
+
+            <div class="checkout-card-banner">
+              <img class="checkout-card-banner-img" src="k2-_7221675a-6d36-4e9f-81a5-27dd4d84bf0b.v1.png" alt="OnePay card">
+              <div>
+                <div class="small text-muted">OnePay Cash Rewards Card</div>
+                <div class="fw-semibold small">Earn unlimited 3% cash back at Walmart</div>
+                <button class="btn btn-outline-primary btn-sm mt-2">Learn more</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
