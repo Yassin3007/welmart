@@ -11,51 +11,278 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
 </head>
-<body>
-  <header class="store-header">
-    <div class="container py-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
-      <a class="brand d-inline-flex align-items-center text-decoration-none" href="index.html"><span class="brand-mark">✶</span><span class="brand-name ms-2">Walmart</span></a>
-      <nav class="d-flex flex-wrap gap-2">
-        <a class="btn btn-sm btn-light" href="index.html">Home</a>
-        <a class="btn btn-sm btn-light" href="shop.html">Shop</a>
-        <a class="btn btn-sm btn-warning" href="product.html">Product</a>
-        <a class="btn btn-sm btn-light" href="cart.html">Cart</a>
-      </nav>
+<body class="product-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+    <header class="safqa-header">
+    <div class="container">
+      <div class="safqa-header-inner">
+        <a class="safqa-brand" href="index.html" aria-label="Safqqa home">
+          <img class="safqa-word-icon" src="icons2.svg" alt="" aria-hidden="true">
+          <span class="safqa-name">SAFQQA</span>
+        </a>
+
+        <form class="safqa-search" role="search" aria-label="Site search" autocomplete="off">
+          <button class="safqa-search-icon" type="submit"><i class="bi bi-search"></i></button>
+          <input type="search" placeholder="Search everything at Walmart online and in store">
+        </form>
+
+        <div class="safqa-actions">
+          <a class="safqa-action" href="wishlist.html"><i class="bi bi-heart"></i><span>Favorites<br><b>My items</b></span></a>
+          <a class="safqa-action" href="signin.html"><i class="bi bi-person"></i><span>Sign in<br><b>Account</b></span></a>
+          <a class="safqa-cart" href="cart.html" aria-label="Cart">
+            <span class="safqa-cart-icon"><img class="safqa-cart-icon-img" src="icons2.svg" alt="" aria-hidden="true"><b id="cartCount">0</b></span>
+            <span class="safqa-cart-total">399.00 LE</span>
+          </a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main class="py-5">
+  <main id="main" class="py-4">
     <div class="container">
+      <nav class="product-breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb mb-2">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="shop.html">Beauty</a></li>
+          <li class="breadcrumb-item active" aria-current="page" id="productBreadcrumb">Product</li>
+        </ol>
+      </nav>
+
       <div class="row g-4">
-        <div class="col-lg-6">
-          <div class="product-card p-3">
-            <img src="https://picsum.photos/seed/laptop/900/640" class="img-fluid rounded-3" alt="Laptop">
+        <div class="col-lg-5">
+          <div class="product-gallery card-soft p-3">
+            <div class="product-gallery-main">
+              <img id="productImage" src="https://picsum.photos/seed/laptop/720/720" alt="Product image" class="img-fluid">
+            </div>
+            <div class="product-gallery-thumbs">
+              <button class="thumb-btn active"><img src="https://picsum.photos/seed/laptop/120/120" alt="Thumbnail"></button>
+              <button class="thumb-btn"><img src="https://picsum.photos/seed/laptop2/120/120" alt="Thumbnail"></button>
+              <button class="thumb-btn"><img src="https://picsum.photos/seed/laptop3/120/120" alt="Thumbnail"></button>
+              <button class="thumb-btn"><img src="https://picsum.photos/seed/laptop4/120/120" alt="Thumbnail"></button>
+            </div>
+            <div class="gallery-actions">
+              <button class="btn btn-sm btn-light"><i class="bi bi-arrows-fullscreen"></i> View larger</button>
+              <button class="btn btn-sm btn-light"><i class="bi bi-share"></i> Share</button>
+            </div>
           </div>
         </div>
-        <div class="col-lg-6">
-          <p class="small text-primary fw-bold mb-2">Electronics / Laptops</p>
-          <h1 class="section-title">14" Everyday Laptop, 8GB RAM</h1>
-          <p class="rating"><i class="bi bi-star-fill"></i> 4.4 (392 reviews)</p>
-          <h3 class="price mb-1">$329.00 <span class="old-price">$399.00</span></h3>
-          <p class="text-muted">Reliable everyday performance, long battery life, and compact form for work and school.</p>
 
-          <div class="d-flex gap-2 mb-3">
-            <button class="btn btn-primary add-cart" data-product-id="1">Add to cart</button>
-            <button class="btn btn-outline-primary quick-view" data-product-id="1" data-name='14" Everyday Laptop, 8GB RAM' data-price="$329.00" data-image="https://picsum.photos/seed/laptop/900/640">Quick view</button>
+        <div class="col-lg-4">
+          <div class="product-main">
+            <p class="small text-muted mb-2" id="productCategory">Beauty / Skincare</p>
+            <h1 class="product-title" id="productName">Proactiv 3-Step Acne Treatment Kit</h1>
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <div class="rating-badge"><i class="bi bi-star-fill"></i> <span id="productRating">4.5</span></div>
+              <span class="text-muted small">(1,248 reviews)</span>
+              <a class="small" href="#reviews">Read reviews</a>
+            </div>
+
+            <div class="price-stack mb-3">
+              <div class="price-row">
+                <span class="price" id="productPrice">$29.00</span>
+                <span class="old-price" id="productOldPrice">$39.00</span>
+                <span class="badge text-bg-success">Save 25%</span>
+              </div>
+              <p class="small text-muted mb-0">Pickup, delivery, and shipping available.</p>
+            </div>
+
+            <div class="delivery-box">
+              <div class="d-flex gap-2">
+                <div class="delivery-icon"><i class="bi bi-truck"></i></div>
+                <div>
+                  <div class="fw-semibold">Arrives by tomorrow</div>
+                  <div class="small text-muted">Free delivery with Walmart+</div>
+                </div>
+              </div>
+              <div class="d-flex gap-2">
+                <div class="delivery-icon"><i class="bi bi-bag-check"></i></div>
+                <div>
+                  <div class="fw-semibold">Pickup today</div>
+                  <div class="small text-muted">Ready in 2 hours at Sacramento Supercenter</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="variant-box">
+              <p class="small text-muted mb-2">Size</p>
+              <div class="d-flex flex-wrap gap-2">
+                <button class="btn btn-sm btn-outline-primary">1 month</button>
+                <button class="btn btn-sm btn-outline-primary active">2 month</button>
+                <button class="btn btn-sm btn-outline-primary">3 month</button>
+              </div>
+            </div>
+
+            <div class="product-actions">
+              <button class="btn btn-primary w-100 add-cart" data-product-id="1"><i class="bi bi-cart-plus"></i> Add to cart</button>
+              <div class="d-flex gap-2">
+                <button class="btn btn-outline-primary w-50"><i class="bi bi-heart"></i> Wishlist</button>
+                <button class="btn btn-outline-secondary w-50"><i class="bi bi-shuffle"></i> Compare</button>
+              </div>
+            </div>
+
+            <div class="product-usp">
+              <div><i class="bi bi-patch-check"></i> Free returns within 90 days</div>
+              <div><i class="bi bi-shield-check"></i> Authentic guarantee</div>
+              <div><i class="bi bi-credit-card"></i> Pay in 4 with Klarna</div>
+            </div>
           </div>
+        </div>
 
-          <ul class="small text-muted ps-3 mb-0">
-            <li>Free shipping over $35</li>
-            <li>30-day return policy</li>
-            <li>Pickup available today</li>
-          </ul>
+        <div class="col-lg-3">
+          <aside class="buy-box card-soft">
+            <div class="buy-box-header">
+              <h2 class="h6 mb-1">At a glance</h2>
+              <p class="small text-muted mb-0">Sponsored, sold & shipped by Walmart</p>
+            </div>
+            <div class="buy-box-body">
+              <div class="price-block">
+                <span class="price" id="buyBoxPrice">$29.00</span>
+                <span class="small text-muted">per kit</span>
+              </div>
+              <div class="progress soft mb-2"><div class="progress-bar" style="width:62%"></div></div>
+              <p class="small text-muted">Only 16 left in stock</p>
+
+              <div class="qty-picker">
+                <button class="btn btn-light">-</button>
+                <span class="qty-value">1</span>
+                <button class="btn btn-light">+</button>
+              </div>
+
+              <button class="btn btn-primary w-100 add-cart" data-product-id="1">Add to cart</button>
+              <button class="btn btn-outline-primary w-100">Buy now</button>
+
+              <div class="buy-box-meta">
+                <div><i class="bi bi-shop"></i> Sold by Walmart.com</div>
+                <div><i class="bi bi-arrow-return-left"></i> Free return shipping</div>
+                <div><i class="bi bi-award"></i> 2-year protection plan available</div>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
 
-      <section class="mt-5">
-        <h2 class="section-title h4 mb-3">Product details</h2>
-        <div class="catalog-filters rounded-4 p-4">
-          <p class="mb-0">This product page is ready and integrated with global cart logic. Adding this item updates cart state across all pages via localStorage.</p>
+      <section class="product-detail-grid mt-4">
+        <div class="detail-card">
+          <h2 class="h5">Highlights</h2>
+          <ul class="detail-list">
+            <li>Clinically tested 3-step system to help reduce breakouts.</li>
+            <li>Includes cleanser, toner, and treatment for daily use.</li>
+            <li>Dermatologist-tested, gentle for sensitive skin types.</li>
+            <li>Bonus travel size kit for on-the-go routines.</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <h2 class="h5">About this item</h2>
+          <p class="text-muted">Formulated with proprietary benzoyl peroxide complex and soothing botanicals, this kit helps minimize blemishes while keeping skin hydrated. Use morning and night for best results.</p>
+          <div class="detail-tags">
+            <span>Oil-free</span><span>Non-comedogenic</span><span>Dermatologist-tested</span>
+          </div>
+        </div>
+        <div class="detail-card">
+          <h2 class="h5">Specifications</h2>
+          <div class="spec-grid">
+            <div><span>Brand</span><b id="productBrand">Proactiv</b></div>
+            <div><span>Category</span><b id="productCategorySpec">Skincare</b></div>
+            <div><span>Model</span><b>PKT-2026</b></div>
+            <div><span>Return policy</span><b>Free 90-day returns</b></div>
+            <div><span>Bundle includes</span><b>3 items + travel kit</b></div>
+            <div><span>Made in</span><b>USA</b></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" class="reviews-section mt-4">
+        <div class="reviews-header">
+          <div>
+            <h2 class="h5 mb-1">Customer reviews</h2>
+            <p class="small text-muted mb-0">4.5 out of 5 based on 1,248 reviews</p>
+          </div>
+          <button class="btn btn-outline-primary">Write a review</button>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-summary card-soft">
+            <div class="review-score">4.5</div>
+            <div class="rating-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+            </div>
+            <p class="small text-muted">Most customers love the fast results and gentle finish.</p>
+            <div class="rating-bars">
+              <div><span>5★</span><div class="bar"><div style="width:68%"></div></div><span>68%</span></div>
+              <div><span>4★</span><div class="bar"><div style="width:21%"></div></div><span>21%</span></div>
+              <div><span>3★</span><div class="bar"><div style="width:7%"></div></div><span>7%</span></div>
+              <div><span>2★</span><div class="bar"><div style="width:3%"></div></div><span>3%</span></div>
+              <div><span>1★</span><div class="bar"><div style="width:1%"></div></div><span>1%</span></div>
+            </div>
+          </div>
+
+          <div class="review-list">
+            <article class="review-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="fw-semibold">Great results in 3 weeks</div>
+                <span class="small text-muted">Jan 20, 2026</span>
+              </div>
+              <div class="rating-stars small">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p class="text-muted">My skin cleared up significantly and the regimen is easy to follow. The travel kit is a nice bonus.</p>
+            </article>
+            <article class="review-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="fw-semibold">Gentle but effective</div>
+                <span class="small text-muted">Dec 02, 2025</span>
+              </div>
+              <div class="rating-stars small">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+              </div>
+              <p class="text-muted">No dryness after the first week. The scent is light and the packaging looks premium.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-carousel mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="h5 mb-0">Frequently bought together</h2>
+          <a class="small" href="shop.html">See all</a>
+        </div>
+        <div class="row g-3">
+          <div class="col-6 col-lg-3">
+            <div class="mini-card">
+              <img src="https://picsum.photos/seed/serum/300/220" alt="Serum">
+              <div>
+                <p class="small mb-1">Hydrating Serum</p>
+                <b class="small">$12.99</b>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="mini-card">
+              <img src="https://picsum.photos/seed/cleanser/300/220" alt="Cleanser">
+              <div>
+                <p class="small mb-1">Foaming Cleanser</p>
+                <b class="small">$9.99</b>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="mini-card">
+              <img src="https://picsum.photos/seed/mask/300/220" alt="Mask">
+              <div>
+                <p class="small mb-1">Clay Detox Mask</p>
+                <b class="small">$14.49</b>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="mini-card">
+              <img src="https://picsum.photos/seed/moist/300/220" alt="Moisturizer">
+              <div>
+                <p class="small mb-1">Daily Moisturizer</p>
+                <b class="small">$11.25</b>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -65,5 +292,33 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
   <script src="pages.js"></script>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var id = Number(params.get("id")) || 1;
+      var list = window.WM_PRODUCTS || [];
+      var product = list.find(function (p) { return p.id === id; }) || list[0];
+      if (!product) return;
+
+      var price = "$" + Number(product.price).toFixed(2);
+      var oldPrice = product.oldPrice ? "$" + Number(product.oldPrice).toFixed(2) : "";
+
+      document.getElementById("productName").textContent = product.name;
+      document.getElementById("productCategory").textContent = product.category + " / " + product.brand;
+      document.getElementById("productCategorySpec").textContent = product.category;
+      document.getElementById("productBrand").textContent = product.brand;
+      document.getElementById("productRating").textContent = product.rating.toFixed(1);
+      document.getElementById("productImage").src = product.image;
+      document.getElementById("productImage").alt = product.name;
+      document.getElementById("productPrice").textContent = price;
+      document.getElementById("buyBoxPrice").textContent = price;
+      document.getElementById("productOldPrice").textContent = oldPrice || "$" + (Number(product.price) + 10).toFixed(2);
+      document.getElementById("productBreadcrumb").textContent = product.name;
+
+      document.querySelectorAll(".add-cart").forEach(function (btn) {
+        btn.setAttribute("data-product-id", product.id);
+      });
+    })();
+  </script>
 </body>
 </html>

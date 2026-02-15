@@ -14,82 +14,49 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+    <header class="safqa-header">
+    <div class="container">
+      <div class="safqa-header-inner">
+        <a class="safqa-brand" href="index.html" aria-label="Safqqa home">
+          <img class="safqa-word-icon" src="icons2.svg" alt="" aria-hidden="true">
+          <span class="safqa-name">SAFQQA</span>
+        </a>
 
-  <div class="top-strip py-2">
-    <div class="container d-flex justify-content-between align-items-center gap-2 flex-wrap">
-      <p class="small mb-0"><i class="bi bi-truck me-1"></i> Free shipping on orders over $35</p>
-      <ul class="top-links list-unstyled d-flex gap-3 mb-0 small">
-        <li><a href="shop.html">Store finder</a></li>
-        <li><a href="orders.html">Order tracking</a></li>
-        <li><a href="contact.html">Help center</a></li>
-      </ul>
-    </div>
-  </div>
+        <form class="safqa-search" role="search" aria-label="Site search" autocomplete="off">
+          <button class="safqa-search-icon" type="submit"><i class="bi bi-search"></i></button>
+          <input type="search" placeholder="Search everything at Walmart online and in store">
+        </form>
 
-  <header class="store-header">
-    <div class="container py-3">
-      <div class="row align-items-center g-3">
-        <div class="col-8 col-md-2">
-          <a class="brand d-inline-flex align-items-center text-decoration-none" href="index.html" aria-label="Walmart home">
-            <span class="brand-mark" aria-hidden="true">✶</span>
-            <span class="brand-name ms-2">Walmart</span>
-          </a>
-        </div>
-
-        <div class="col-12 col-md-4 col-lg-5 order-3 order-md-2">
-          <form class="search-wrap input-group" role="search" aria-label="Site search" autocomplete="off">
-            <input id="searchInput" type="search" class="form-control rounded-start-pill" placeholder="Search groceries, electronics, home, fashion and more">
-            <button class="btn btn-light rounded-end-pill px-4" type="submit"><i class="bi bi-search"></i></button>
-          </form>
-          <div id="searchSuggestions" class="search-suggestions d-none" aria-label="Suggested searches">
-            <button type="button" class="suggestion-item" data-query="laptop deals">laptop deals</button>
-            <button type="button" class="suggestion-item" data-query="air fryer">air fryer</button>
-            <button type="button" class="suggestion-item" data-query="wireless headphones">wireless headphones</button>
-            <button type="button" class="suggestion-item" data-query="school supplies">school supplies</button>
-          </div>
-        </div>
-
-        <div class="col-4 col-md-6 col-lg-5 order-2 order-md-3">
-          <div class="header-actions d-flex justify-content-end gap-2">
-            <a class="action-pill d-none d-md-inline-flex" href="shop.html"><i class="bi bi-geo-alt"></i><span>Pickup: Sacramento</span></a>
-            <a class="action-pill d-none d-md-inline-flex" href="account.html"><i class="bi bi-person"></i><span>Sign in</span></a>
-            <a class="action-pill d-none d-md-inline-flex" href="wishlist.html"><i class="bi bi-heart"></i><span>Wishlist</span><b id="wishlistCount">0</b></a>
-            <a class="action-pill d-none d-md-inline-flex" href="#" data-bs-toggle="modal" data-bs-target="#compareModal"><i class="bi bi-layers"></i><span>Compare</span><b id="compareCount">0</b></a>
-            <a class="action-pill" href="cart.html"><i class="bi bi-cart3"></i><span>Cart</span><b id="cartCount">0</b></a>
+        <div class="safqa-actions">
+          <a class="safqa-action" href="wishlist.html"><i class="bi bi-heart"></i><span>Favorites<br><b>My items</b></span></a>
+          <a class="safqa-action" href="signin.html"><i class="bi bi-person"></i><span>Sign in<br><b>Account</b></span></a>
+          <div class="safqa-cart-wrap" id="cartHoverWrap">
+            <a class="safqa-cart" href="cart.html" aria-label="Cart">
+              <span class="safqa-cart-icon"><img class="safqa-cart-icon-img" src="icons2.svg" alt="" aria-hidden="true"><b id="cartCount">0</b></span>
+              <span class="safqa-cart-total">399.00 LE</span>
+            </a>
+            <dialog class="cart-hover-dialog" id="cartHoverDialog" aria-label="Cart items dialog">
+              <div class="cart-hover-head">
+                <span>Cart items</span>
+                <b id="cartHoverCount">0</b>
+              </div>
+              <div class="cart-hover-items" id="cartHoverItems"></div>
+              <div class="cart-hover-foot">
+                <span>Total</span>
+                <b id="cartHoverTotal">$0.00</b>
+              </div>
+            </dialog>
           </div>
         </div>
       </div>
     </div>
-
-    <nav class="header-nav navbar navbar-expand-lg p-0" aria-label="Department navigation">
-      <div class="container">
-        <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#departmentNav" aria-controls="departmentNav" aria-expanded="false" aria-label="Toggle departments">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="departmentNav">
-          <ul class="nav py-2 flex-nowrap overflow-auto">
-            <li class="nav-item"><a class="nav-link active" href="shop.html">Departments</a></li>
-            <li class="nav-item"><a class="nav-link" href="shop.html">Grocery</a></li>
-            <li class="nav-item"><a class="nav-link" href="shop.html">Electronics</a></li>
-            <li class="nav-item"><a class="nav-link" href="shop.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="shop.html">Fashion</a></li>
-            <li class="nav-item"><a class="nav-link" href="shop.html">Baby</a></li>
-            <li class="nav-item"><a class="nav-link" href="shop.html">Pharmacy</a></li>
-            <li class="nav-item"><a class="nav-link" href="shop.html">Auto & tires</a></li>
-            <li class="nav-item"><a class="nav-link" href="shop.html">School supplies</a></li>
-            <li class="nav-item"><a class="nav-link" href="shop.html">Deals</a></li>
-            <li class="nav-item"><a class="nav-link" href="account.html">Registry</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
   </header>
 
   <main id="main">
     <section class="hero py-4 py-lg-5">
       <div class="container">
         <div class="row g-4 align-items-stretch">
-          <div class="col-lg-8 reveal">
+          <div class="col-lg-12 reveal">
             <div id="heroCarousel" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="5500">
               <div class="carousel-indicators">
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
@@ -149,194 +116,253 @@
               </button>
             </div>
           </div>
-
-          <div class="col-lg-4 reveal">
-            <div class="promo-stack h-100 d-grid gap-3">
-              <article class="promo-tile p-4 rounded-4">
-                <p class="tile-kicker mb-2">Kitchen event</p>
-                <h3>Up to 40% off cookware, storage, and appliances</h3>
-                <a href="#" class="tile-link">Shop kitchen <i class="bi bi-arrow-right"></i></a>
-              </article>
-              <article class="promo-tile p-4 rounded-4">
-                <p class="tile-kicker mb-2">Back to school</p>
-                <h3>Backpacks, notebooks, and classroom essentials</h3>
-                <a href="#" class="tile-link">Shop school <i class="bi bi-arrow-right"></i></a>
-              </article>
-              <article class="promo-tile p-4 rounded-4">
-                <p class="tile-kicker mb-2">Pet care</p>
-                <h3>Everyday low prices on food, treats, and toys</h3>
-                <a href="#" class="tile-link">Shop pets <i class="bi bi-arrow-right"></i></a>
-              </article>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
-    <section class="trust-strip pb-2 reveal">
+    <section class="icon-categories py-3 reveal" aria-label="Shop by category">
       <div class="container">
-        <div class="row g-3">
-          <div class="col-6 col-md-3"><div class="trust-item"><i class="bi bi-shop"></i>Pickup in as little as 2 hours</div></div>
-          <div class="col-6 col-md-3"><div class="trust-item"><i class="bi bi-box-seam"></i>Free returns up to 90 days</div></div>
-          <div class="col-6 col-md-3"><div class="trust-item"><i class="bi bi-credit-card-2-front"></i>Flexible payment options</div></div>
-          <div class="col-6 col-md-3"><div class="trust-item"><i class="bi bi-patch-check"></i>Trusted product quality</div></div>
+        <div class="icon-categories-track">
+          <a class="icon-category-item" href="shop.html?category=mobile">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/mobile/120/120" alt="Mobile Phones and Tablets">
+            </span>
+            <span class="icon-category-label">Mobile Phones &amp; Tablets</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=watch">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/watch/120/120" alt="Smart watches">
+            </span>
+            <span class="icon-category-label">Smart watches</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=laptop">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/laptop/120/120" alt="Laptops">
+            </span>
+            <span class="icon-category-label">Laptops</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=fashion">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/fashion/120/120" alt="Fashion">
+            </span>
+            <span class="icon-category-label">Fashion</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=kitchen">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/kitchen/120/120" alt="Kitchen">
+            </span>
+            <span class="icon-category-label">Kitchen</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=sports">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/sports/120/120" alt="Sports and fitness">
+            </span>
+            <span class="icon-category-label">Sports and fitness</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=automotive">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/auto/120/120" alt="Automotive">
+            </span>
+            <span class="icon-category-label">Automotive</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=beauty">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/beauty/120/120" alt="Beauty and personal care">
+            </span>
+            <span class="icon-category-label">Beauty and personal care</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=baby">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/baby/120/120" alt="Baby and Toddler">
+            </span>
+            <span class="icon-category-label">Baby &amp; Toddler</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=pools">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/pool/120/120" alt="Pools and Water Games">
+            </span>
+            <span class="icon-category-label">Pools &amp; Water Games</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=sunglasses">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/glasses/120/120" alt="Sunglasses">
+            </span>
+            <span class="icon-category-label">Sunglasses</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="quick-cats py-4 reveal">
+
+    <section class="category-panels py-4 reveal">
       <div class="container">
-        <div class="row g-3 text-center">
-          <div class="col-6 col-md-3 col-lg-2"><a href="#" class="cat-pill">Grocery</a></div>
-          <div class="col-6 col-md-3 col-lg-2"><a href="#" class="cat-pill">Electronics</a></div>
-          <div class="col-6 col-md-3 col-lg-2"><a href="#" class="cat-pill">Home</a></div>
-          <div class="col-6 col-md-3 col-lg-2"><a href="#" class="cat-pill">Beauty</a></div>
-          <div class="col-6 col-md-3 col-lg-2"><a href="#" class="cat-pill">Toys</a></div>
-          <div class="col-6 col-md-3 col-lg-2"><a href="#" class="cat-pill">Auto</a></div>
+        <div class="category-slider-head d-flex align-items-center justify-content-between gap-3 mb-3">
+          <h2 class="section-title mb-0">Catogeries</h2>
+          <div class="category-slider-controls">
+            <button type="button" class="category-slider-btn" id="categoryPrev" aria-label="Previous category">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <button type="button" class="category-slider-btn" id="categoryNext" aria-label="Next category">
+              <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="category-slider" id="categorySlider">
+          <article class="category-card" data-category="kitchen">
+            <h3 class="category-card-title">Kitchen</h3>
+            <div class="category-card-grid"></div>
+          </article>
+          <article class="category-card" data-category="cars">
+            <h3 class="category-card-title">Cars</h3>
+            <div class="category-card-grid"></div>
+          </article>
+          <article class="category-card" data-category="beauty">
+            <h3 class="category-card-title">Beauty</h3>
+            <div class="category-card-grid"></div>
+          </article>
+          <article class="category-card" data-category="babys">
+            <h3 class="category-card-title">Babys</h3>
+            <div class="category-card-grid"></div>
+          </article>
+          <article class="category-card" data-category="home">
+            <h3 class="category-card-title">Home</h3>
+            <div class="category-card-grid"></div>
+          </article>
+          <article class="category-card" data-category="babys">
+            <h3 class="category-card-title">Babys</h3>
+            <div class="category-card-grid"></div>
+          </article>
+          <article class="category-card" data-category="cars">
+            <h3 class="category-card-title">Cars</h3>
+            <div class="category-card-grid"></div>
+          </article>
+          <article class="category-card" data-category="beauty">
+            <h3 class="category-card-title">Beauty</h3>
+            <div class="category-card-grid"></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="smart-board py-4 reveal">
-      <div class="container">
-        <div class="flash-banner rounded-4 p-4 p-md-5 mb-4">
-          <div class="row align-items-center g-3">
-            <div class="col-lg-6">
-              <p class="small text-uppercase fw-bold mb-2">Flash Deals</p>
-              <h2 class="mb-2">Today-only electronics markdowns</h2>
-              <p class="mb-0">Save up to 55% on selected devices and accessories before the timer ends.</p>
-            </div>
-            <div class="col-lg-6 text-lg-end">
-              <div class="countdown d-inline-flex gap-2" id="flashCountdown" aria-label="Deal countdown timer">
-                <span><b data-time="h">12</b><small>hrs</small></span>
-                <span><b data-time="m">00</b><small>min</small></span>
-                <span><b data-time="s">00</b><small>sec</small></span>
-              </div>
-              <div class="mt-3">
-                <a href="#" class="btn btn-light rounded-pill px-4">Shop flash deals</a>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="row g-3">
-          <div class="col-md-4">
-            <article class="intel-card p-3 h-100">
-              <h3 class="h6">High demand now</h3>
-              <p class="small text-muted mb-2">Portable AC Units</p>
-              <div class="progress soft mb-2"><div class="progress-bar" style="width:85%"></div></div>
-              <p class="mini mb-0">85% shoppers viewed this in the last 24h</p>
-            </article>
-          </div>
-          <div class="col-md-4">
-            <article class="intel-card p-3 h-100">
-              <h3 class="h6">Best value this week</h3>
-              <p class="small text-muted mb-2">Family grocery bundles</p>
-              <div class="progress soft mb-2"><div class="progress-bar" style="width:72%"></div></div>
-              <p class="mini mb-0">Average basket savings: $31</p>
-            </article>
-          </div>
-          <div class="col-md-4">
-            <article class="intel-card p-3 h-100">
-              <h3 class="h6">Running low soon</h3>
-              <p class="small text-muted mb-2">Gaming monitors 27&quot;</p>
-              <div class="progress soft mb-2"><div class="progress-bar" style="width:63%"></div></div>
-              <p class="mini mb-0">Only 37% of inventory remaining</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="product-section py-5 reveal">
+    <section class="product-section ramadan-section py-5 reveal">
       <div class="container">
+        <div class="ramadan-moons" aria-hidden="true">
+          <i class="bi bi-moon-stars-fill ramadan-moon moon-1"></i>
+          <i class="bi bi-moon-stars-fill ramadan-moon moon-2"></i>
+          <i class="bi bi-moon-stars-fill ramadan-moon moon-3"></i>
+          <i class="bi bi-moon-stars-fill ramadan-moon moon-4"></i>
+        </div>
         <div class="section-head d-flex justify-content-between align-items-center mb-3">
-          <h2 class="section-title mb-0">Featured deals</h2>
+          <h2 class="section-title mb-0"><i class="bi bi-moon-stars-fill ramadan-helal" aria-hidden="true"></i> RAMADAN</h2>
           <a href="#" class="section-link">See all</a>
         </div>
 
         <div class="row g-4">
           <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-            <article class="product-card h-100" data-cat="electronics">
-              <div class="product-badge">Best seller</div>
-              <img src="https://picsum.photos/seed/laptop/360/280" class="img-fluid rounded-3 mb-2" alt="14 inch laptop">
-              <p class="small text-muted mb-1">Electronics</p>
-              <h3 class="h6 product-title">14&quot; Everyday Laptop, 8GB RAM</h3>
-              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.4 (392)</div>
-              <p class="mb-1"><span class="price">$329.00</span> <span class="old-price">$399.00</span></p>
-              <div class="d-flex gap-2 mt-2">
-                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart">Add to cart</button>
-                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="14&quot; Everyday Laptop, 8GB RAM" data-price="$329.00" data-image="https://picsum.photos/seed/laptop/600/420">Quick view</button>
-              </div>
-            </article>
-          </div>
-          <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-            <article class="product-card h-100" data-cat="electronics">
-              <div class="product-badge">Rollback</div>
-              <img src="https://picsum.photos/seed/headphones/360/280" class="img-fluid rounded-3 mb-2" alt="wireless headphones">
-              <p class="small text-muted mb-1">Audio</p>
-              <h3 class="h6 product-title">Noise-Reducing Wireless Headphones</h3>
-              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.6 (1208)</div>
-              <p class="mb-1"><span class="price">$49.00</span> <span class="old-price">$69.00</span></p>
-              <div class="d-flex gap-2 mt-2">
-                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart">Add to cart</button>
-                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Noise-Reducing Wireless Headphones" data-price="$49.00" data-image="https://picsum.photos/seed/headphones/600/420">Quick view</button>
-              </div>
-            </article>
-          </div>
-          <div class="col-6 col-md-4 col-lg-3 col-xl-2">
             <article class="product-card h-100" data-cat="home">
-              <div class="product-badge">Trending</div>
-              <img src="https://picsum.photos/seed/chair/360/280" class="img-fluid rounded-3 mb-2" alt="office chair">
-              <p class="small text-muted mb-1">Home office</p>
-              <h3 class="h6 product-title">Ergonomic Office Chair with Lumbar Support</h3>
-              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.2 (610)</div>
-              <p class="mb-1"><span class="price">$119.00</span> <span class="old-price">$149.00</span></p>
-              <div class="d-flex gap-2 mt-2">
-                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart">Add to cart</button>
-                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Ergonomic Office Chair with Lumbar Support" data-price="$119.00" data-image="https://picsum.photos/seed/chair/600/420">Quick view</button>
-              </div>
-            </article>
-          </div>
-          <div class="col-6 col-md-4 col-lg-3 col-xl-2">
-            <article class="product-card h-100" data-cat="home">
-              <div class="product-badge">Save 20%</div>
-              <img src="https://picsum.photos/seed/kettle/360/280" class="img-fluid rounded-3 mb-2" alt="electric kettle">
+              <div class="product-badge">Ramadan pick</div>
+              <a class="product-link" href="product.html?id=11">
+                <img src="https://picsum.photos/seed/airfryer/360/280" class="img-fluid rounded-3 mb-2" alt="air fryer">
+              </a>
               <p class="small text-muted mb-1">Kitchen</p>
-              <h3 class="h6 product-title">1.7L Stainless Steel Electric Kettle</h3>
-              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.5 (702)</div>
-              <p class="mb-1"><span class="price">$24.00</span> <span class="old-price">$30.00</span></p>
+              <h3 class="h6 product-title"><a class="product-link" href="product.html?id=11">Air Fryer 5L</a></h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.6 (890)</div>
+              <p class="mb-1"><span class="price">$64.00</span> <span class="old-price">$89.00</span></p>
               <div class="d-flex gap-2 mt-2">
-                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart">Add to cart</button>
-                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="1.7L Stainless Steel Electric Kettle" data-price="$24.00" data-image="https://picsum.photos/seed/kettle/600/420">Quick view</button>
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart" data-product-id="11">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Air Fryer 5L" data-price="$64.00" data-image="https://picsum.photos/seed/airfryer/600/420">Quick view</button>
+              </div>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+            <article class="product-card h-100" data-cat="home">
+              <div class="product-badge">Ramadan pick</div>
+              <a class="product-link" href="product.html?id=13">
+                <img src="https://picsum.photos/seed/blender/360/280" class="img-fluid rounded-3 mb-2" alt="hand blender">
+              </a>
+              <p class="small text-muted mb-1">Kitchen</p>
+              <h3 class="h6 product-title"><a class="product-link" href="product.html?id=13">Cordless Hand Blender</a></h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.1 (438)</div>
+              <p class="mb-1"><span class="price">$22.00</span> <span class="old-price">$29.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart" data-product-id="13">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Cordless Hand Blender" data-price="$22.00" data-image="https://picsum.photos/seed/blender/600/420">Quick view</button>
+              </div>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+            <article class="product-card h-100" data-cat="electronics">
+              <div class="product-badge">Ramadan pick</div>
+              <a class="product-link" href="product.html?id=16">
+                <img src="https://picsum.photos/seed/speaker/360/280" class="img-fluid rounded-3 mb-2" alt="portable speaker">
+              </a>
+              <p class="small text-muted mb-1">Audio</p>
+              <h3 class="h6 product-title"><a class="product-link" href="product.html?id=16">Bluetooth Portable Speaker</a></h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.3 (712)</div>
+              <p class="mb-1"><span class="price">$39.00</span> <span class="old-price">$49.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart" data-product-id="16">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Bluetooth Portable Speaker" data-price="$39.00" data-image="https://picsum.photos/seed/speaker/600/420">Quick view</button>
               </div>
             </article>
           </div>
           <div class="col-6 col-md-4 col-lg-3 col-xl-2">
             <article class="product-card h-100" data-cat="kids">
-              <div class="product-badge">Hot deal</div>
-              <img src="https://picsum.photos/seed/toy/360/280" class="img-fluid rounded-3 mb-2" alt="building blocks">
-              <p class="small text-muted mb-1">Toys</p>
-              <h3 class="h6 product-title">Creative Building Blocks Set, 500 Pieces</h3>
-              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.7 (322)</div>
-              <p class="mb-1"><span class="price">$19.00</span> <span class="old-price">$24.00</span></p>
+              <div class="product-badge">Ramadan pick</div>
+              <a class="product-link" href="product.html?id=15">
+                <img src="https://picsum.photos/seed/stem/360/280" class="img-fluid rounded-3 mb-2" alt="stem learning kit">
+              </a>
+              <p class="small text-muted mb-1">Kids</p>
+              <h3 class="h6 product-title"><a class="product-link" href="product.html?id=15">STEM Learning Kit</a></h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.8 (533)</div>
+              <p class="mb-1"><span class="price">$29.00</span> <span class="old-price">$39.00</span></p>
               <div class="d-flex gap-2 mt-2">
-                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart">Add to cart</button>
-                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Creative Building Blocks Set, 500 Pieces" data-price="$19.00" data-image="https://picsum.photos/seed/toy/600/420">Quick view</button>
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart" data-product-id="15">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="STEM Learning Kit" data-price="$29.00" data-image="https://picsum.photos/seed/stem/600/420">Quick view</button>
               </div>
             </article>
           </div>
           <div class="col-6 col-md-4 col-lg-3 col-xl-2">
             <article class="product-card h-100" data-cat="fitness">
-              <div class="product-badge">New</div>
-              <img src="https://picsum.photos/seed/watch/360/280" class="img-fluid rounded-3 mb-2" alt="fitness watch">
-              <p class="small text-muted mb-1">Wearables</p>
-              <h3 class="h6 product-title">Smart Fitness Watch with Heart Tracking</h3>
-              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.3 (944)</div>
-              <p class="mb-1"><span class="price">$79.00</span> <span class="old-price">$99.00</span></p>
+              <div class="product-badge">Ramadan pick</div>
+              <a class="product-link" href="product.html?id=14">
+                <img src="https://picsum.photos/seed/bands/360/280" class="img-fluid rounded-3 mb-2" alt="resistance bands">
+              </a>
+              <p class="small text-muted mb-1">Fitness</p>
+              <h3 class="h6 product-title"><a class="product-link" href="product.html?id=14">Resistance Band Set</a></h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.0 (301)</div>
+              <p class="mb-1"><span class="price">$18.00</span> <span class="old-price">$25.00</span></p>
               <div class="d-flex gap-2 mt-2">
-                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart">Add to cart</button>
-                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Smart Fitness Watch with Heart Tracking" data-price="$79.00" data-image="https://picsum.photos/seed/watch/600/420">Quick view</button>
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart" data-product-id="14">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Resistance Band Set" data-price="$18.00" data-image="https://picsum.photos/seed/bands/600/420">Quick view</button>
+              </div>
+            </article>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+            <article class="product-card h-100" data-cat="fitness">
+              <div class="product-badge">Ramadan pick</div>
+              <a class="product-link" href="product.html?id=9">
+                <img src="https://picsum.photos/seed/protein/360/280" class="img-fluid rounded-3 mb-2" alt="protein powder">
+              </a>
+              <p class="small text-muted mb-1">Wellness</p>
+              <h3 class="h6 product-title"><a class="product-link" href="product.html?id=9">Premium Protein Powder</a></h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.2 (654)</div>
+              <p class="mb-1"><span class="price">$34.00</span> <span class="old-price">$42.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart" data-product-id="9">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Premium Protein Powder" data-price="$34.00" data-image="https://picsum.photos/seed/protein/600/420">Quick view</button>
               </div>
             </article>
           </div>
@@ -344,183 +370,514 @@
       </div>
     </section>
 
-    <section class="catalog-section py-5 reveal">
+    <section class="product-section akwa-section py-5 reveal">
       <div class="container">
-        <div class="section-head d-flex justify-content-between align-items-center mb-3">
-          <h2 class="section-title mb-0">Full ecommerce catalog</h2>
-          <div class="d-flex gap-2">
-            <button class="btn btn-sm btn-outline-primary rounded-pill" data-bs-toggle="offcanvas" data-bs-target="#wishlistCanvas">Wishlist <span id="wishlistCountInline">0</span></button>
-            <button class="btn btn-sm btn-primary rounded-pill" data-bs-toggle="offcanvas" data-bs-target="#cartCanvas">Cart <span id="cartCountInline">0</span></button>
+        <div class="akwa-slider-head d-flex align-items-center justify-content-between gap-3 mb-3">
+          <h2 class="section-title mb-0">akwa safqqa</h2>
+          <div class="category-slider-controls">
+            <button type="button" class="category-slider-btn" id="akwaPrev" aria-label="Previous products">
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <button type="button" class="category-slider-btn" id="akwaNext" aria-label="Next products">
+              <i class="bi bi-chevron-right"></i>
+            </button>
           </div>
         </div>
 
-        <div class="catalog-filters p-3 p-md-4 rounded-4 mb-4">
-          <div class="row g-2">
-            <div class="col-12 col-lg-4">
-              <input id="catalogSearch" class="form-control" type="search" placeholder="Search in catalog">
-            </div>
-            <div class="col-6 col-lg-2">
-              <select id="catalogCategory" class="form-select">
-                <option value="all">All categories</option>
-              </select>
-            </div>
-            <div class="col-6 col-lg-2">
-              <select id="catalogBrand" class="form-select">
-                <option value="all">All brands</option>
-              </select>
-            </div>
-            <div class="col-6 col-lg-2">
-              <select id="catalogSort" class="form-select">
-                <option value="featured">Sort: Featured</option>
-                <option value="price_low">Price: Low to high</option>
-                <option value="price_high">Price: High to low</option>
-                <option value="rating_high">Rating: High to low</option>
-                <option value="name_asc">Name: A to Z</option>
-              </select>
-            </div>
-            <div class="col-6 col-lg-2 d-grid">
-              <button id="clearCatalogFilters" class="btn btn-outline-secondary">Clear filters</button>
-            </div>
-          </div>
-
-          <div class="row g-2 mt-1 align-items-center">
-            <div class="col-12 col-md-8">
-              <label for="priceRange" class="small text-muted">Max price: <b id="priceRangeValue">$500</b></label>
-              <input type="range" class="form-range" id="priceRange" min="10" max="500" value="500" step="5">
-            </div>
-            <div class="col-12 col-md-4 text-md-end small text-muted">
-              Showing <span id="catalogCount">0</span> products
-            </div>
-          </div>
-        </div>
-
-        <div class="row g-3" id="catalogGrid"></div>
-        <nav class="mt-4" aria-label="Catalog pagination">
-          <ul class="pagination justify-content-center mb-0" id="catalogPagination"></ul>
-        </nav>
-      </div>
-    </section>
-
-    <section class="smart-reco py-5 reveal">
-      <div class="container">
-        <div class="section-head d-flex justify-content-between align-items-center mb-3">
-          <h2 class="section-title mb-0">Smart recommendations</h2>
-          <a href="#" class="section-link">See personalization settings</a>
-        </div>
-
-        <div class="filter-row d-flex flex-wrap gap-2 mb-4" role="tablist" aria-label="Recommendation filters">
-          <button class="filter-btn active" data-filter="all" type="button" aria-pressed="true">All</button>
-          <button class="filter-btn" data-filter="electronics" type="button" aria-pressed="false">Electronics</button>
-          <button class="filter-btn" data-filter="home" type="button" aria-pressed="false">Home</button>
-          <button class="filter-btn" data-filter="kids" type="button" aria-pressed="false">Kids</button>
-          <button class="filter-btn" data-filter="fitness" type="button" aria-pressed="false">Fitness</button>
-        </div>
-
-        <div class="row g-3" id="recoGrid">
-          <div class="col-6 col-md-4 col-lg-3 reco-item" data-cat="electronics"><div class="mini-product">4K webcam <span>$49</span></div></div>
-          <div class="col-6 col-md-4 col-lg-3 reco-item" data-cat="electronics"><div class="mini-product">Gaming keyboard <span>$59</span></div></div>
-          <div class="col-6 col-md-4 col-lg-3 reco-item" data-cat="home"><div class="mini-product">Bamboo shelf unit <span>$44</span></div></div>
-          <div class="col-6 col-md-4 col-lg-3 reco-item" data-cat="home"><div class="mini-product">Air fryer 5L <span>$64</span></div></div>
-          <div class="col-6 col-md-4 col-lg-3 reco-item" data-cat="kids"><div class="mini-product">Kids scooter <span>$58</span></div></div>
-          <div class="col-6 col-md-4 col-lg-3 reco-item" data-cat="kids"><div class="mini-product">STEM learning set <span>$29</span></div></div>
-          <div class="col-6 col-md-4 col-lg-3 reco-item" data-cat="fitness"><div class="mini-product">Yoga mat pro <span>$21</span></div></div>
-          <div class="col-6 col-md-4 col-lg-3 reco-item" data-cat="fitness"><div class="mini-product">Protein powder <span>$34</span></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="promo-row py-3 reveal">
-      <div class="container">
-        <div class="row g-3">
-          <div class="col-lg-6">
-            <article class="inline-promo rounded-4 p-4">
-              <p class="small text-uppercase fw-semibold mb-2">Home refresh</p>
-              <h3 class="h4 mb-2">Furniture and decor for every room</h3>
-              <p class="mb-3">Find modern pieces and practical storage with rollback pricing.</p>
-              <a href="#" class="btn btn-outline-primary rounded-pill">Shop home</a>
+        <div class="akwa-product-slider" id="akwaSlider">
+          <div class="akwa-product-item">
+            <article class="product-card h-100" data-cat="home">
+              <div class="product-badge">hot offer</div>
+              <a class="product-link" href="product.html?id=11">
+                <img src="https://picsum.photos/seed/airfryer/360/280" class="img-fluid rounded-3 mb-2" alt="air fryer">
+              </a>
+              <p class="small text-muted mb-1">Kitchen</p>
+              <h3 class="h6 product-title"><a class="product-link" href="product.html?id=11">Air Fryer 5L</a></h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.6 (890)</div>
+              <p class="mb-1"><span class="price">$64.00</span> <span class="old-price">$89.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart" data-product-id="11">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Air Fryer 5L" data-price="$64.00" data-image="https://picsum.photos/seed/airfryer/600/420">Quick view</button>
+              </div>
             </article>
           </div>
-          <div class="col-lg-6">
-            <article class="inline-promo rounded-4 p-4 alt">
-              <p class="small text-uppercase fw-semibold mb-2">Health and wellness</p>
-              <h3 class="h4 mb-2">Pharmacy essentials and daily care</h3>
-              <p class="mb-3">Stock up on vitamins, personal care, and over-the-counter basics.</p>
-              <a href="#" class="btn btn-outline-primary rounded-pill">Shop wellness</a>
+          <div class="akwa-product-item">
+            <article class="product-card h-100" data-cat="home">
+              <div class="product-badge">hot offer</div>
+              <a class="product-link" href="product.html?id=13">
+                <img src="https://picsum.photos/seed/blender/360/280" class="img-fluid rounded-3 mb-2" alt="hand blender">
+              </a>
+              <p class="small text-muted mb-1">Kitchen</p>
+              <h3 class="h6 product-title"><a class="product-link" href="product.html?id=13">Cordless Hand Blender</a></h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.1 (438)</div>
+              <p class="mb-1"><span class="price">$22.00</span> <span class="old-price">$29.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart" data-product-id="13">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Cordless Hand Blender" data-price="$22.00" data-image="https://picsum.photos/seed/blender/600/420">Quick view</button>
+              </div>
+            </article>
+          </div>
+          <div class="akwa-product-item">
+            <article class="product-card h-100" data-cat="electronics">
+              <div class="product-badge">hot offer</div>
+              <a class="product-link" href="product.html?id=16">
+                <img src="https://picsum.photos/seed/speaker/360/280" class="img-fluid rounded-3 mb-2" alt="portable speaker">
+              </a>
+              <p class="small text-muted mb-1">Audio</p>
+              <h3 class="h6 product-title"><a class="product-link" href="product.html?id=16">Bluetooth Portable Speaker</a></h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.3 (712)</div>
+              <p class="mb-1"><span class="price">$39.00</span> <span class="old-price">$49.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart" data-product-id="16">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Bluetooth Portable Speaker" data-price="$39.00" data-image="https://picsum.photos/seed/speaker/600/420">Quick view</button>
+              </div>
+            </article>
+          </div>
+          <div class="akwa-product-item">
+            <article class="product-card h-100" data-cat="kids">
+              <div class="product-badge">hot offer</div>
+              <a class="product-link" href="product.html?id=15">
+                <img src="https://picsum.photos/seed/stem/360/280" class="img-fluid rounded-3 mb-2" alt="stem learning kit">
+              </a>
+              <p class="small text-muted mb-1">Kids</p>
+              <h3 class="h6 product-title"><a class="product-link" href="product.html?id=15">STEM Learning Kit</a></h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.8 (533)</div>
+              <p class="mb-1"><span class="price">$29.00</span> <span class="old-price">$39.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart" data-product-id="15">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="STEM Learning Kit" data-price="$29.00" data-image="https://picsum.photos/seed/stem/600/420">Quick view</button>
+              </div>
+            </article>
+          </div>
+          <div class="akwa-product-item">
+            <article class="product-card h-100" data-cat="fitness">
+              <div class="product-badge">hot offer</div>
+              <a class="product-link" href="product.html?id=14">
+                <img src="https://picsum.photos/seed/bands/360/280" class="img-fluid rounded-3 mb-2" alt="resistance bands">
+              </a>
+              <p class="small text-muted mb-1">Fitness</p>
+              <h3 class="h6 product-title"><a class="product-link" href="product.html?id=14">Resistance Band Set</a></h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.0 (301)</div>
+              <p class="mb-1"><span class="price">$18.00</span> <span class="old-price">$25.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart" data-product-id="14">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Resistance Band Set" data-price="$18.00" data-image="https://picsum.photos/seed/bands/600/420">Quick view</button>
+              </div>
+            </article>
+          </div>
+          <div class="akwa-product-item">
+            <article class="product-card h-100" data-cat="fitness">
+              <div class="product-badge">hot offer</div>
+              <a class="product-link" href="product.html?id=9">
+                <img src="https://picsum.photos/seed/protein/360/280" class="img-fluid rounded-3 mb-2" alt="protein powder">
+              </a>
+              <p class="small text-muted mb-1">Wellness</p>
+              <h3 class="h6 product-title"><a class="product-link" href="product.html?id=9">Premium Protein Powder</a></h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.2 (654)</div>
+              <p class="mb-1"><span class="price">$34.00</span> <span class="old-price">$42.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart" data-product-id="9">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Premium Protein Powder" data-price="$34.00" data-image="https://picsum.photos/seed/protein/600/420">Quick view</button>
+              </div>
+            </article>
+          </div>
+          <div class="akwa-product-item">
+            <article class="product-card h-100" data-cat="electronics">
+              <div class="product-badge">hot offer</div>
+              <a class="product-link" href="product.html?id=12">
+                <img src="https://picsum.photos/seed/keyboard/360/280" class="img-fluid rounded-3 mb-2" alt="gaming keyboard">
+              </a>
+              <p class="small text-muted mb-1">Electronics</p>
+              <h3 class="h6 product-title"><a class="product-link" href="product.html?id=12">Gaming Mechanical Keyboard</a></h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.4 (811)</div>
+              <p class="mb-1"><span class="price">$59.00</span> <span class="old-price">$79.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart" data-product-id="12">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Gaming Mechanical Keyboard" data-price="$59.00" data-image="https://picsum.photos/seed/keyboard/600/420">Quick view</button>
+              </div>
+            </article>
+          </div>
+          <div class="akwa-product-item">
+            <article class="product-card h-100" data-cat="electronics">
+              <div class="product-badge">hot offer</div>
+              <a class="product-link" href="product.html?id=7">
+                <img src="https://picsum.photos/seed/tv/360/280" class="img-fluid rounded-3 mb-2" alt="smart tv">
+              </a>
+              <p class="small text-muted mb-1">Electronics</p>
+              <h3 class="h6 product-title"><a class="product-link" href="product.html?id=7">4K UHD 55-inch Smart TV</a></h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.5 (1225)</div>
+              <p class="mb-1"><span class="price">$299.00</span> <span class="old-price">$379.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart" data-product-id="7">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="4K UHD 55-inch Smart TV" data-price="$299.00" data-image="https://picsum.photos/seed/tv/600/420">Quick view</button>
+              </div>
+            </article>
+          </div>
+          <div class="akwa-product-item">
+            <article class="product-card h-100" data-cat="home">
+              <div class="product-badge">hot offer</div>
+              <a class="product-link" href="product.html?id=8">
+                <img src="https://picsum.photos/seed/vacuum/360/280" class="img-fluid rounded-3 mb-2" alt="robot vacuum">
+              </a>
+              <p class="small text-muted mb-1">Home</p>
+              <h3 class="h6 product-title"><a class="product-link" href="product.html?id=8">Robot Vacuum Cleaner</a></h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.1 (577)</div>
+              <p class="mb-1"><span class="price">$169.00</span> <span class="old-price">$219.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart" data-product-id="8">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="Robot Vacuum Cleaner" data-price="$169.00" data-image="https://picsum.photos/seed/vacuum/600/420">Quick view</button>
+              </div>
+            </article>
+          </div>
+          <div class="akwa-product-item">
+            <article class="product-card h-100" data-cat="electronics">
+              <div class="product-badge">hot offer</div>
+              <a class="product-link" href="product.html?id=1">
+                <img src="https://picsum.photos/seed/laptop/360/280" class="img-fluid rounded-3 mb-2" alt="laptop">
+              </a>
+              <p class="small text-muted mb-1">Electronics</p>
+              <h3 class="h6 product-title"><a class="product-link" href="product.html?id=1">14&quot; Everyday Laptop, 8GB RAM</a></h3>
+              <div class="rating small mb-2"><i class="bi bi-star-fill"></i> 4.4 (392)</div>
+              <p class="mb-1"><span class="price">$329.00</span> <span class="old-price">$399.00</span></p>
+              <div class="d-flex gap-2 mt-2">
+                <button class="btn btn-sm btn-outline-primary rounded-pill add-cart" data-product-id="1">Add to cart</button>
+                <button class="btn btn-sm btn-light rounded-pill quick-view" data-name="14&quot; Everyday Laptop, 8GB RAM" data-price="$329.00" data-image="https://picsum.photos/seed/laptop/600/420">Quick view</button>
+              </div>
             </article>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="departments py-5 reveal">
+    <section class="product-section py-5">
+      <div class="container" id="categorySections"></div>
+    </section>
+
+    <section class="reels-section py-5 reveal">
       <div class="container">
         <div class="section-head d-flex justify-content-between align-items-center mb-3">
-          <h2 class="section-title mb-0">Shop by department</h2>
-          <a href="#" class="section-link">Browse all</a>
+          <h2 class="section-title mb-0">Trending on social media</h2>
+          <a href="all-reels.html" class="section-link">View All</a>
         </div>
-        <div class="row g-3">
-          <div class="col-6 col-md-4 col-lg-3"><a href="#" class="dept-card d-block">Fresh groceries</a></div>
-          <div class="col-6 col-md-4 col-lg-3"><a href="#" class="dept-card d-block">Home decor</a></div>
-          <div class="col-6 col-md-4 col-lg-3"><a href="#" class="dept-card d-block">Baby essentials</a></div>
-          <div class="col-6 col-md-4 col-lg-3"><a href="#" class="dept-card d-block">Sports & outdoors</a></div>
-          <div class="col-6 col-md-4 col-lg-3"><a href="#" class="dept-card d-block">Health & wellness</a></div>
-          <div class="col-6 col-md-4 col-lg-3"><a href="#" class="dept-card d-block">Office supplies</a></div>
-          <div class="col-6 col-md-4 col-lg-3"><a href="#" class="dept-card d-block">Patio & garden</a></div>
-          <div class="col-6 col-md-4 col-lg-3"><a href="#" class="dept-card d-block">Automotive</a></div>
+        <div class="ugc-reels-grid">
+          <article class="ugc-reel-card">
+            <div class="ugc-reel-media">
+              <video class="ugc-reel-video" controls playsinline preload="metadata" poster="https://picsum.photos/seed/ugc1/600/1060" src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"></video>
+            </div>
+          </article>
+          <article class="ugc-reel-card">
+            <div class="ugc-reel-media">
+              <video class="ugc-reel-video" controls playsinline preload="metadata" poster="https://picsum.photos/seed/ugc2/600/1060" src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"></video>
+            </div>
+          </article>
+          <article class="ugc-reel-card">
+            <div class="ugc-reel-media">
+              <video class="ugc-reel-video" controls playsinline preload="metadata" poster="https://picsum.photos/seed/ugc3/600/1060" src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"></video>
+            </div>
+          </article>
+          <article class="ugc-reel-card">
+            <div class="ugc-reel-media">
+              <video class="ugc-reel-video" controls playsinline preload="metadata" poster="https://picsum.photos/seed/ugc4/600/1060" src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"></video>
+            </div>
+          </article>
+        </div>
+        <div class="text-end mt-3">
+          <a href="all-reels.html" class="btn btn-outline-primary rounded-pill">View All</a>
         </div>
       </div>
     </section>
 
-    <section class="brands py-5 reveal">
+    <section class="quality-grades-section py-5 reveal">
+      <div class="container">
+        <h2 class="quality-grades-title mb-4">Product Quality Grades</h2>
+        <div class="quality-grades-grid">
+          <article class="quality-grade-card">
+            <h3 class="quality-grade-name">Sealed</h3>
+            <div class="quality-grade-image-wrap">
+              <img class="quality-grade-image" src="https://picsum.photos/seed/quality-sealed/640/360" alt="Sealed quality grade">
+            </div>
+            <div class="quality-grade-divider"></div>
+            <p class="quality-save-line">Save Up to <span>40%</span></p>
+            <p class="quality-subline">vs. original retail price</p>
+            <ul class="quality-points">
+              <li><i class="bi bi-check-circle"></i> Brand new item</li>
+              <li><i class="bi bi-check-circle"></i> Factory sealed original packaging</li>
+              <li><i class="bi bi-check-circle"></i> All original accessories included</li>
+            </ul>
+            <p class="quality-note">* Original box might be damaged</p>
+            <a href="shop.html" class="btn quality-btn">See Products</a>
+          </article>
+
+          <article class="quality-grade-card">
+            <h3 class="quality-grade-name">New - Quality Grade</h3>
+            <div class="quality-grade-image-wrap">
+              <img class="quality-grade-image" src="https://picsum.photos/seed/quality-new/640/360" alt="New quality grade">
+            </div>
+            <div class="quality-grade-divider"></div>
+            <p class="quality-save-line">Save Up to <span>50%</span></p>
+            <p class="quality-subline">vs. original retail price</p>
+            <ul class="quality-points">
+              <li><i class="bi bi-check-circle"></i> Original product</li>
+              <li><i class="bi bi-check-circle"></i> Opened for inspection purposes only</li>
+              <li><i class="bi bi-check-circle"></i> Never used</li>
+              <li><i class="bi bi-check-circle"></i> Fully tested and 100% functional</li>
+            </ul>
+            <p class="quality-note">* Products graded by Safqqa Experts</p>
+            <a href="shop.html" class="btn quality-btn">See Products</a>
+          </article>
+
+          <article class="quality-grade-card">
+            <h3 class="quality-grade-name">Open Box - Quality Grade</h3>
+            <div class="quality-grade-image-wrap">
+              <img class="quality-grade-image" src="https://picsum.photos/seed/quality-open-box/640/360" alt="Open box quality grade">
+            </div>
+            <div class="quality-grade-divider"></div>
+            <p class="quality-save-line">Save Up to <span>60%</span></p>
+            <p class="quality-subline">vs. original retail price</p>
+            <ul class="quality-points">
+              <li><i class="bi bi-check-circle"></i> Original product</li>
+              <li><i class="bi bi-check-circle"></i> Packaging opened</li>
+              <li><i class="bi bi-check-circle"></i> May show minor cosmetic handling marks</li>
+              <li><i class="bi bi-check-circle"></i> Fully tested and fully functional</li>
+              <li><i class="bi bi-check-circle"></i> Accessories may be original or compatible</li>
+            </ul>
+            <p class="quality-note">* Item will be delivered in Safqqa packaging with all compatible accessories</p>
+            <a href="shop.html" class="btn quality-btn">See Products</a>
+          </article>
+
+          <article class="quality-grade-card">
+            <h3 class="quality-grade-name">Refurbished - Quality Grade</h3>
+            <div class="quality-grade-image-wrap">
+              <img class="quality-grade-image" src="https://picsum.photos/seed/quality-refurbished/640/360" alt="Refurbished quality grade">
+            </div>
+            <div class="quality-grade-divider"></div>
+            <p class="quality-save-line">Save Up to <span>70%</span></p>
+            <p class="quality-subline">vs. original retail price</p>
+            <ul class="quality-points">
+              <li><i class="bi bi-check-circle"></i> Original product</li>
+              <li><i class="bi bi-check-circle"></i> Professionally inspected and refurbished</li>
+              <li><i class="bi bi-check-circle"></i> Fully functional after professional testing</li>
+              <li><i class="bi bi-check-circle"></i> May show minor cosmetic marks</li>
+              <li><i class="bi bi-check-circle"></i> Fully functional after testing</li>
+            </ul>
+            <p class="quality-note">* Item will be delivered in Safqqa packaging with all compatible accessories</p>
+            <a href="shop.html" class="btn quality-btn">See Products</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews-slider-section py-5 reveal">
+      <div class="container">
+        <h2 class="reviews-slider-title mb-3">REVIEWS</h2>
+        <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row g-3">
+                <div class="col-12 col-md-4">
+                  <article class="review-slide-card">
+                    <div class="review-slide-image">
+                      <img src="https://picsum.photos/seed/rev-1/420/280" alt="Review by Sarah M">
+                    </div>
+                    <h3 class="review-slide-name">Sarah M.</h3>
+                    <div class="review-slide-stars">★ ★ ★ ★ ★</div>
+                    <div class="review-slide-text">
+                      Great quality and fast delivery. The material feels premium and exactly as shown in the photos.
+                    </div>
+                  </article>
+                </div>
+                <div class="col-12 col-md-4">
+                  <article class="review-slide-card">
+                    <div class="review-slide-image">
+                      <img src="https://picsum.photos/seed/rev-2/420/280" alt="Review by Omar K">
+                    </div>
+                    <h3 class="review-slide-name">Omar K.</h3>
+                    <div class="review-slide-stars">★ ★ ★ ★ ★</div>
+                    <div class="review-slide-text">
+                      I was surprised by how good this is for the price. Packaging was secure and product works perfectly.
+                    </div>
+                  </article>
+                </div>
+                <div class="col-12 col-md-4">
+                  <article class="review-slide-card">
+                    <div class="review-slide-image">
+                      <img src="https://picsum.photos/seed/rev-3/420/280" alt="Review by Lina T">
+                    </div>
+                    <h3 class="review-slide-name">Lina T.</h3>
+                    <div class="review-slide-stars">★ ★ ★ ★ ★</div>
+                    <div class="review-slide-text">
+                      Comfortable fit and true to size. I already ordered another color after trying this one.
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row g-3">
+                <div class="col-12 col-md-4">
+                  <article class="review-slide-card">
+                    <div class="review-slide-image">
+                      <img src="https://picsum.photos/seed/rev-4/420/280" alt="Review by David H">
+                    </div>
+                    <h3 class="review-slide-name">David H.</h3>
+                    <div class="review-slide-stars">★ ★ ★ ★ ★</div>
+                    <div class="review-slide-text">
+                      Solid build quality and easy setup. It arrived one day early and has been working flawlessly.
+                    </div>
+                  </article>
+                </div>
+                <div class="col-12 col-md-4">
+                  <article class="review-slide-card">
+                    <div class="review-slide-image">
+                      <img src="https://picsum.photos/seed/rev-5/420/280" alt="Review by Nour A">
+                    </div>
+                    <h3 class="review-slide-name">Nour A.</h3>
+                    <div class="review-slide-stars">★ ★ ★ ★ ★</div>
+                    <div class="review-slide-text">
+                      Excellent value for money. Looks modern, feels durable, and customer support was very helpful.
+                    </div>
+                  </article>
+                </div>
+                <div class="col-12 col-md-4">
+                  <article class="review-slide-card">
+                    <div class="review-slide-image">
+                      <img src="https://picsum.photos/seed/rev-6/420/280" alt="Review by Kareem S">
+                    </div>
+                    <h3 class="review-slide-name">Kareem S.</h3>
+                    <div class="review-slide-stars">★ ★ ★ ★ ★</div>
+                    <div class="review-slide-text">
+                      Better than expected. The finish is clean and it matches the product description exactly.
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="carousel-control-prev reviews-carousel-control" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev" aria-label="Previous reviews">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next reviews-carousel-control" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next" aria-label="Next reviews">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="pay-with-section py-5 reveal">
       <div class="container">
         <div class="section-head d-flex justify-content-between align-items-center mb-3">
-          <h2 class="section-title mb-0">Popular brands</h2>
-          <a href="#" class="section-link">Shop brand stores</a>
+          <h2 class="section-title mb-0">PAY WITH</h2>
         </div>
-        <div class="row g-3">
-          <div class="col-6 col-md-3"><div class="brand-tile">Great Value</div></div>
-          <div class="col-6 col-md-3"><div class="brand-tile">onn.</div></div>
-          <div class="col-6 col-md-3"><div class="brand-tile">Mainstays</div></div>
-          <div class="col-6 col-md-3"><div class="brand-tile">Equate</div></div>
+        <div id="payMethodsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row g-3">
+                <div class="col-12 col-md-4">
+                  <article class="pay-image-card">
+                    <div class="pay-logo-wrap">
+                      <a class="pay-logo-link" href="https://www.cibeg.com" target="_blank" rel="noopener noreferrer" aria-label="CIB official website">
+                        <img src="https://www.google.com/s2/favicons?domain=www.cibeg.com&sz=128" alt="CIB logo">
+                      </a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-12 col-md-4">
+                  <article class="pay-image-card">
+                    <div class="pay-logo-wrap">
+                      <a class="pay-logo-link" href="https://www.banquemisr.com" target="_blank" rel="noopener noreferrer" aria-label="Banque Misr official website">
+                        <img src="https://www.google.com/s2/favicons?domain=www.banquemisr.com&sz=128" alt="Banque Misr logo">
+                      </a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-12 col-md-4">
+                  <article class="pay-image-card">
+                    <div class="pay-logo-wrap">
+                      <a class="pay-logo-link" href="https://www.nbe.com.eg" target="_blank" rel="noopener noreferrer" aria-label="NBE official website">
+                        <img src="https://www.google.com/s2/favicons?domain=www.nbe.com.eg&sz=128" alt="NBE logo">
+                      </a>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row g-3">
+                <div class="col-12 col-md-4">
+                  <article class="pay-image-card">
+                    <div class="pay-logo-wrap">
+                      <a class="pay-logo-link" href="https://www.qnbalahli.com" target="_blank" rel="noopener noreferrer" aria-label="QNB ALAHLI official website">
+                        <img src="https://www.google.com/s2/favicons?domain=www.qnbalahli.com&sz=128" alt="QNB ALAHLI logo">
+                      </a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-12 col-md-4">
+                  <article class="pay-image-card">
+                    <div class="pay-logo-wrap">
+                      <a class="pay-logo-link" href="https://www.alexbank.com" target="_blank" rel="noopener noreferrer" aria-label="AlexBank official website">
+                        <img src="https://www.google.com/s2/favicons?domain=www.alexbank.com&sz=128" alt="AlexBank logo">
+                      </a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-12 col-md-4">
+                  <article class="pay-image-card">
+                    <div class="pay-logo-wrap">
+                      <a class="pay-logo-link" href="https://www.hsbc.com.eg" target="_blank" rel="noopener noreferrer" aria-label="HSBC Egypt official website">
+                        <img src="https://www.google.com/s2/favicons?domain=www.hsbc.com.eg&sz=128" alt="HSBC Egypt logo">
+                      </a>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row g-3">
+                <div class="col-12 col-md-4">
+                  <article class="pay-image-card">
+                    <div class="pay-logo-wrap">
+                      <a class="pay-logo-link" href="https://www.valu.com.eg" target="_blank" rel="noopener noreferrer" aria-label="valu official website">
+                        <img src="https://www.google.com/s2/favicons?domain=www.valu.com.eg&sz=128" alt="valu logo">
+                      </a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-12 col-md-4">
+                  <article class="pay-image-card">
+                    <div class="pay-logo-wrap">
+                      <a class="pay-logo-link" href="https://www.tru.com.eg" target="_blank" rel="noopener noreferrer" aria-label="TRU official website">
+                        <img src="https://www.google.com/s2/favicons?domain=www.tru.com.eg&sz=128" alt="TRU logo">
+                      </a>
+                    </div>
+                  </article>
+                </div>
+                <div class="col-12 col-md-4">
+                  <article class="pay-image-card">
+                    <div class="pay-logo-wrap">
+                      <a class="pay-logo-link" href="https://www.aman.eg" target="_blank" rel="noopener noreferrer" aria-label="aman official website">
+                        <img src="https://www.google.com/s2/favicons?domain=www.aman.eg&sz=128" alt="aman logo">
+                      </a>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev pay-carousel-control" type="button" data-bs-target="#payMethodsCarousel" data-bs-slide="prev" aria-label="Previous payment methods">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next pay-carousel-control" type="button" data-bs-target="#payMethodsCarousel" data-bs-slide="next" aria-label="Next payment methods">
+            <span class="carousel-control-next-icon"></span>
+          </button>
         </div>
       </div>
     </section>
 
-    <section class="app-banner py-5 reveal">
-      <div class="container">
-        <div class="app-card rounded-4 p-4 p-md-5 d-flex flex-column flex-lg-row justify-content-between align-items-start align-items-lg-center gap-3">
-          <div>
-            <p class="small text-uppercase fw-bold mb-2">Walmart App</p>
-            <h2 class="mb-2">Get order updates and faster checkout</h2>
-            <p class="mb-0">Scan, pay, and reorder in seconds with the Walmart mobile app.</p>
-          </div>
-          <div class="d-flex gap-2 flex-wrap">
-            <a href="#" class="btn btn-warning rounded-pill px-4">Download app</a>
-            <a href="#" class="btn btn-light rounded-pill px-4">Learn more</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="newsletter py-5 reveal">
-      <div class="container">
-        <div class="newsletter-wrap rounded-4 p-4 p-md-5">
-          <div class="row g-3 align-items-center">
-            <div class="col-lg-7">
-              <h2 class="mb-2">Be first to know about weekly deals</h2>
-              <p class="mb-0">Get updates on savings events, limited offers, and member-exclusive discounts.</p>
-            </div>
-            <div class="col-lg-5">
-              <form id="newsletterForm" class="input-group" novalidate>
-                <input id="newsletterEmail" type="email" class="form-control" placeholder="Enter your email" required>
-                <button class="btn btn-primary" type="submit">Subscribe</button>
-              </form>
-              <p id="newsletterMessage" class="small mt-2 mb-0" aria-live="polite"></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer py-5">
@@ -556,7 +913,7 @@
         <div class="col-6 col-md-2">
           <h4 class="h6">Account</h4>
           <ul class="list-unstyled small mb-0">
-            <li><a href="#">Sign in</a></li>
+            <li><a href="signin.html">Sign in</a></li>
             <li><a href="#">Purchase history</a></li>
             <li><a href="#">Lists</a></li>
             <li><a href="#">Registry</a></li>
@@ -618,21 +975,31 @@
   </div>
 
   <div class="offcanvas offcanvas-end" tabindex="-1" id="cartCanvas" aria-labelledby="cartCanvasLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="cartCanvasLabel">Shopping cart</h5>
+    <div class="offcanvas-header cart-canvas-head">
+      <h5 class="offcanvas-title" id="cartCanvasLabel">Your cart</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body d-flex flex-column">
-      <div id="cartItems" class="mb-3"></div>
-      <div class="cart-summary p-3 rounded-3 mt-auto">
-        <div class="d-flex justify-content-between small mb-1"><span>Subtotal</span><b id="cartSubtotal">$0.00</b></div>
-        <div class="d-flex justify-content-between small mb-1"><span>Discount</span><b id="cartDiscount">$0.00</b></div>
-        <div class="d-flex justify-content-between small mb-2"><span>Estimated total</span><b id="cartTotal">$0.00</b></div>
+    <div class="offcanvas-body d-flex flex-column cart-canvas-body">
+      <div id="cartItems" class="mb-3 cart-drawer-items"></div>
+      <div class="cart-summary p-3 rounded-3">
+        <div class="cart-subtotal-row mb-1">
+          <span id="cartSubtotalLabel">Subtotal</span>
+          <b id="cartSubtotal">$0.00</b>
+        </div>
+        <div class="d-flex justify-content-between small mb-1"><span id="cartDiscountLabel">Discount</span><b id="cartDiscount">$0.00</b></div>
+        <div class="d-flex justify-content-between small mb-2"><span id="cartTotalLabel">Estimated total</span><b id="cartTotal">$0.00</b></div>
+        <p class="cart-tax-note mb-2" id="cartTaxNote">Tax included. Shipping calculated at checkout.</p>
+        <div class="cart-ship-free mb-3" id="cartShipNote">
+          <i class="bi bi-truck"></i>
+          <span>You are getting FREE shipping!</span>
+        </div>
         <div class="input-group mb-2">
           <input id="couponInput" class="form-control" type="text" placeholder="Coupon code (SAVE10)">
           <button id="applyCoupon" class="btn btn-outline-primary" type="button">Apply</button>
         </div>
-        <button id="openCheckout" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#checkoutModal">Proceed to checkout</button>
+        <h6 class="cart-reco-title mt-3 mb-2" id="cartRecoTitle">You may also like</h6>
+        <div class="cart-reco-list mb-3" id="cartRecoItems"></div>
+        <button id="openCheckout" class="btn btn-primary w-100 cart-checkout-btn" data-bs-toggle="modal" data-bs-target="#checkoutModal">Check out</button>
       </div>
     </div>
   </div>
