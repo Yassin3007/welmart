@@ -20,10 +20,6 @@ body {
   margin: 0;
   color: var(--ink);
   font-family: "Barlow", sans-serif;
-  background:
-    radial-gradient(circle at 12% -20%, #e9f4ff 0, #e9f4ff 30%, transparent 31%),
-    radial-gradient(circle at 100% 20%, rgba(0, 166, 220, 0.09) 0, rgba(0, 166, 220, 0) 40%),
-    linear-gradient(180deg, #ffffff 0%, var(--paper) 100%);
 }
 
 /* Reduce side whitespace across the page */
@@ -150,8 +146,14 @@ h6 {
   font-size: 1.4rem;
 }
 
+.safqa-word-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
 .safqa-name {
-  font-size: 1.25rem;
+  font-size: 2.5rem;
 }
 
 .safqa-search {
@@ -235,11 +237,14 @@ h6 {
 
 .safqa-cart {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
+  justify-content: center;
+  gap: 0.15rem;
   color: #fff;
   text-decoration: none;
   font-weight: 700;
+  line-height: 1;
 }
 
 .safqa-cart-wrap {
@@ -247,34 +252,44 @@ h6 {
 }
 
 .safqa-cart-icon {
-  width: 44px;
+  width: 50px;
   height: 44px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 
+.safqa-cart-icon-img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+}
+
 .safqa-cart-icon b {
   position: absolute;
-  top: -4px;
-  right: -6px;
+  top: 10px;
+  right: 14px;
   background: #ffc220;
   color: #1b2c45;
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  font-size: 0.7rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 2px solid #3a1a8b;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 .safqa-cart-total {
-  font-size: 0.85rem;
-  opacity: 0.9;
+  font-size: 0.72rem;
+  font-weight: 800;
+  opacity: 1;
+  letter-spacing: 0.01em;
+  margin-top: 0.5rem;
+  margin-left: 0.2rem;
 }
 
 .cart-hover-dialog {
@@ -429,6 +444,63 @@ html[dir="rtl"] .category-slider-controls {
   display: none;
 }
 
+.icon-categories {
+  background: transparent;
+}
+
+.icon-categories-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(106px, 1fr);
+  gap: 0.9rem;
+  overflow-x: auto;
+  padding: 0.35rem 0 0.1rem;
+  scrollbar-width: none;
+}
+
+.icon-categories-track::-webkit-scrollbar {
+  display: none;
+}
+
+.icon-category-item {
+  min-width: 106px;
+  text-decoration: none;
+  color: #1d1d1f;
+  text-align: center;
+}
+
+.icon-category-media {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 98px;
+  height: 98px;
+}
+
+.icon-category-frame {
+  width: 98px;
+  height: 98px;
+  object-fit: contain;
+}
+
+.icon-category-photo {
+  position: absolute;
+  width: 68px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 50%;
+  bottom: 1.5rem;
+  right: 0rem
+}
+
+.icon-category-label {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
 .akwa-product-slider {
   display: flex;
   gap: 1rem;
@@ -451,6 +523,398 @@ html[dir="rtl"] .category-slider-controls {
 
 html[dir="rtl"] .akwa-slider-head {
   justify-content: space-between !important;
+}
+
+/* ============================================
+   AKWA SAFQQA - ENHANCED EYE-CATCHING SECTION
+   Using Custom Color Scheme
+   ============================================ */
+
+.akwa-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Enhanced Container with Animated Gradient Background */
+.akwa-section .container {
+  background:
+    radial-gradient(circle at 10% 18%, rgba(89, 55, 191, 0.15), transparent 45%),
+    radial-gradient(circle at 85% 12%, rgba(252, 212, 253, 0.3), transparent 48%),
+    radial-gradient(circle at 50% 90%, rgba(54, 25, 115, 0.08), transparent 50%),
+    linear-gradient(135deg, #ffffff 0%, #f9f5ff 25%, #fef7ff 60%, #fff 100%);
+  border: 2px solid rgba(89, 55, 191, 0.2);
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 
+    0 5px 20px rgba(0, 0, 0, 0.4),
+    0 15px 45px rgba(89, 55, 191, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  position: relative;
+  animation: subtle-pulse 4s ease-in-out infinite;
+}
+
+/* Animated background pulse effect */
+@keyframes subtle-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 5px 20px rgba(0, 0, 0, 0.4),
+      0 15px 45px rgba(89, 55, 191, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    box-shadow: 
+      0 5px 20px rgba(0, 0, 0, 0.4),
+      0 20px 55px rgba(89, 55, 191, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* Decorative corner accents */
+.akwa-section .container::before,
+.akwa-section .container::after {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.akwa-section .container::before {
+  top: -40px;
+  left: -40px;
+  background: radial-gradient(circle, rgba(89, 55, 191, 0.25) 0%, transparent 70%);
+  animation: float-top-left 6s ease-in-out infinite;
+}
+
+.akwa-section .container::after {
+  bottom: -50px;
+  right: -50px;
+  background: radial-gradient(circle, rgba(252, 212, 253, 0.4) 0%, transparent 70%);
+  animation: float-bottom-right 7s ease-in-out infinite;
+}
+
+@keyframes float-top-left {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(10px, 10px) scale(1.1); }
+}
+
+@keyframes float-bottom-right {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-10px, -10px) scale(1.15); }
+}
+
+/* Enhanced Section Title with Gradient */
+.akwa-section .section-title {
+  background: linear-gradient(135deg, #361973 0%, #5937bf 50%, #472c97 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: capitalize;
+  letter-spacing: 0.03em;
+  font-weight: 900;
+  font-size: 2rem;
+  text-shadow: 0 2px 8px rgba(89, 55, 191, 0.15);
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced "Top Deals" label */
+.akwa-section .section-title::before {
+  content: "🔥 Top Deals";
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #5937bf 0%, #361973 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Enhanced Navigation Buttons */
+.akwa-section .category-slider-btn {
+  border: 2px solid rgba(89, 55, 191, 0.3);
+  background: linear-gradient(135deg, #ffffff 0%, #faf7ff 100%);
+  color: #5937bf;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 12px rgba(89, 55, 191, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.akwa-section .category-slider-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(89, 55, 191, 0.15) 0%, rgba(252, 212, 253, 0.15) 100%);
+  opacity: 0;
+  transition: opacity 280ms ease;
+}
+
+.akwa-section .category-slider-btn:hover {
+  transform: scale(1.1) rotate(5deg);
+  border-color: #5937bf;
+  background: linear-gradient(135deg, #5937bf 0%, #472c97 100%);
+  color: #ffffff;
+  box-shadow: 
+    0 8px 24px rgba(89, 55, 191, 0.3),
+    0 5px 20px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.akwa-section .category-slider-btn:hover::before {
+  opacity: 1;
+}
+
+.akwa-section .category-slider-btn i {
+  font-size: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced Product Cards */
+.akwa-section .akwa-product-item .product-card {
+  border: 2px solid rgba(89, 55, 191, 0.15);
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, #ffffff 0%, #fefbff 100%);
+  box-shadow: 
+    0 12px 28px rgba(89, 55, 191, 0.12),
+    0 5px 20px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: all 320ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Hover glow effect */
+.akwa-section .akwa-product-item .product-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(89, 55, 191, 0.08) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 320ms ease;
+  pointer-events: none;
+}
+
+.akwa-section .akwa-product-item .product-card:hover::before {
+  opacity: 1;
+}
+
+.akwa-section .akwa-product-item .product-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: #5937bf;
+  box-shadow: 
+    0 24px 48px rgba(89, 55, 191, 0.22),
+    0 5px 20px rgba(0, 0, 0, 0.4),
+    0 12px 28px rgba(252, 212, 253, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* Enhanced Product Badge with Animation */
+.akwa-section .akwa-product-item .product-badge {
+  background: linear-gradient(135deg, #5937bf 0%, #361973 50%, #472c97 100%);
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 900;
+  font-size: 0.7rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 0 0 0.75rem 0;
+  box-shadow: 
+    0 5px 20px rgba(0, 0, 0, 0.4),
+    0 4px 12px rgba(89, 55, 191, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  animation: badge-pulse 2s ease-in-out infinite;
+}
+
+@keyframes badge-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 5px 20px rgba(0, 0, 0, 0.4),
+      0 4px 12px rgba(89, 55, 191, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 
+      0 5px 20px rgba(0, 0, 0, 0.4),
+      0 6px 18px rgba(89, 55, 191, 0.6),
+      0 2px 8px rgba(252, 212, 253, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Animated shine effect on badge */
+.akwa-section .akwa-product-item .product-badge::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  animation: badge-shine 3s ease-in-out infinite;
+}
+
+@keyframes badge-shine {
+  0%, 100% { left: -100%; }
+  50% { left: 150%; }
+}
+
+/* Enhanced Price Styling */
+.akwa-section .akwa-product-item .price {
+  font-size: 1.35rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #361973 0%, #5937bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.01em;
+}
+
+.akwa-section .akwa-product-item .old-price {
+  color: #dc2626;
+  font-weight: 800;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  opacity: 0.75;
+  font-size: 0.95rem;
+}
+
+/* Enhanced Product Image with Hover Effect */
+.akwa-section .akwa-product-item .product-card img {
+  transition: transform 380ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 1rem;
+}
+
+.akwa-section .akwa-product-item .product-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Enhanced Rating Stars */
+.akwa-section .akwa-product-item .rating i {
+  color: #fbbf24;
+  text-shadow: 0 2px 4px rgba(251, 191, 36, 0.3);
+  animation: star-twinkle 2s ease-in-out infinite;
+}
+
+@keyframes star-twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+/* Enhanced Button Styles */
+.akwa-section .akwa-product-item .btn-outline-primary {
+  border: 2px solid #361973;
+  color: #5937bf;
+  font-weight: 700;
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffffff 0%, #faf7ff 100%);
+}
+
+.akwa-section .akwa-product-item .btn-outline-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(89, 55, 191, 0.5) 50%, transparent 100%);
+  transition: left 500ms ease;
+}
+
+.akwa-section .akwa-product-item .btn-outline-primary:hover {
+  background: linear-gradient(135deg, #5937bf 0%, #472c97 100%);
+  border-color: #361973;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(89, 55, 191, 0.35);
+}
+
+.akwa-section .akwa-product-item .btn-outline-primary:hover::before {
+  left: 100%;
+}
+
+.akwa-section .akwa-product-item .btn-light {
+  background: linear-gradient(135deg, #faf7ff 0%, #ffffff 100%);
+  border: 1px solid rgba(89, 55, 191, 0.2);
+  font-weight: 600;
+  transition: all 280ms ease;
+}
+
+.akwa-section .akwa-product-item .btn-light:hover {
+  background: linear-gradient(135deg, #f3efff 0%, #faf7ff 100%);
+  border-color: rgba(89, 55, 191, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(89, 55, 191, 0.15);
+}
+
+/* Product Title Enhancement */
+.akwa-section .akwa-product-item .product-title a {
+  color: #383838;
+  font-weight: 700;
+  transition: all 280ms ease;
+  position: relative;
+}
+
+.akwa-section .akwa-product-item .product-title a:hover {
+  color: #5937bf;
+}
+
+/* Category Label */
+.akwa-section .akwa-product-item .text-muted {
+  color: #5937bf !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .akwa-section .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .akwa-section .container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .akwa-section .category-slider-btn {
+    width: 38px;
+    height: 38px;
+  }
 }
 
 .category-card {
@@ -619,6 +1083,35 @@ html[dir="rtl"] .akwa-slider-head {
 }
 
 @media (max-width: 576px) {
+  .akwa-section .container {
+    border-radius: 1rem;
+    padding: 1rem 0.85rem;
+  }
+
+  .icon-categories-track {
+    grid-auto-columns: 96px;
+    gap: 0.65rem;
+  }
+
+  .icon-category-media {
+    width: 88px;
+    height: 88px;
+  }
+
+  .icon-category-frame {
+    width: 88px;
+    height: 88px;
+  }
+
+  .icon-category-photo {
+    width: 62px;
+    height: 62px;
+  }
+
+  .icon-category-label {
+    font-size: 0.84rem;
+  }
+
   .category-card {
     flex-basis: 88%;
     min-height: 300px;
@@ -902,6 +1395,84 @@ html[dir="rtl"] .akwa-slider-head {
 
 .section-title {
   font-weight: 800;
+}
+
+.ramadan-helal {
+  color: #d4a017;
+  margin-inline-end: 0.35rem;
+}
+
+.ramadan-section .container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.1rem;
+  border: 1px solid rgba(212, 160, 23, 0.35);
+  background:
+    radial-gradient(circle at 12% 20%, rgba(212, 160, 23, 0.18), transparent 40%),
+    radial-gradient(circle at 90% 15%, rgba(255, 226, 149, 0.22), transparent 42%),
+    linear-gradient(145deg, #fffdf5 0%, #fff8de 52%, #fff3c7 100%);
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+.ramadan-moons {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ramadan-section .section-head,
+.ramadan-section .row {
+  position: relative;
+  z-index: 1;
+}
+
+.ramadan-moon {
+  position: absolute;
+  color: #d4a017;
+  opacity: 0.78;
+  filter: drop-shadow(0 0 10px rgba(212, 160, 23, 0.45));
+  animation: ramadanMoonFloat 3.4s ease-in-out infinite;
+}
+
+.ramadan-moon.moon-1 {
+  top: 20px;
+  left: 28px;
+  font-size: 1.9rem;
+}
+
+.ramadan-moon.moon-2 {
+  top: 56px;
+  right: 72px;
+  font-size: 2.5rem;
+  animation-delay: 0.5s;
+}
+
+.ramadan-moon.moon-3 {
+  top: 132px;
+  right: 22px;
+  font-size: 1.7rem;
+  animation-delay: 1s;
+}
+
+.ramadan-moon.moon-4 {
+  top: 146px;
+  left: 42%;
+  font-size: 1.55rem;
+  animation-delay: 1.4s;
+}
+
+@keyframes ramadanMoonFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 0.62;
+  }
+  50% {
+    transform: translateY(-18px) scale(1.18) rotate(6deg);
+    opacity: 1;
+  }
 }
 
 .section-link {

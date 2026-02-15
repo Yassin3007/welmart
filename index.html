@@ -18,7 +18,7 @@
     <div class="container">
       <div class="safqa-header-inner">
         <a class="safqa-brand" href="index.html" aria-label="Safqqa home">
-          <span class="safqa-logo"><i class="bi bi-record-circle"></i></span>
+          <img class="safqa-word-icon" src="icons2.svg" alt="" aria-hidden="true">
           <span class="safqa-name">SAFQQA</span>
         </a>
 
@@ -32,7 +32,7 @@
           <a class="safqa-action" href="signin.html"><i class="bi bi-person"></i><span>Sign in<br><b>Account</b></span></a>
           <div class="safqa-cart-wrap" id="cartHoverWrap">
             <a class="safqa-cart" href="cart.html" aria-label="Cart">
-              <span class="safqa-cart-icon"><i class="bi bi-cart3"></i><b id="cartCount">0</b></span>
+              <span class="safqa-cart-icon"><img class="safqa-cart-icon-img" src="icons2.svg" alt="" aria-hidden="true"><b id="cartCount">0</b></span>
               <span class="safqa-cart-total">399.00 LE</span>
             </a>
             <dialog class="cart-hover-dialog" id="cartHoverDialog" aria-label="Cart items dialog">
@@ -120,6 +120,90 @@
       </div>
     </section>
 
+    <section class="icon-categories py-3 reveal" aria-label="Shop by category">
+      <div class="container">
+        <div class="icon-categories-track">
+          <a class="icon-category-item" href="shop.html?category=mobile">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/mobile/120/120" alt="Mobile Phones and Tablets">
+            </span>
+            <span class="icon-category-label">Mobile Phones &amp; Tablets</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=watch">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/watch/120/120" alt="Smart watches">
+            </span>
+            <span class="icon-category-label">Smart watches</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=laptop">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/laptop/120/120" alt="Laptops">
+            </span>
+            <span class="icon-category-label">Laptops</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=fashion">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/fashion/120/120" alt="Fashion">
+            </span>
+            <span class="icon-category-label">Fashion</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=kitchen">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/kitchen/120/120" alt="Kitchen">
+            </span>
+            <span class="icon-category-label">Kitchen</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=sports">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/sports/120/120" alt="Sports and fitness">
+            </span>
+            <span class="icon-category-label">Sports and fitness</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=automotive">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/auto/120/120" alt="Automotive">
+            </span>
+            <span class="icon-category-label">Automotive</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=beauty">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/beauty/120/120" alt="Beauty and personal care">
+            </span>
+            <span class="icon-category-label">Beauty and personal care</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=baby">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/baby/120/120" alt="Baby and Toddler">
+            </span>
+            <span class="icon-category-label">Baby &amp; Toddler</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=pools">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/pool/120/120" alt="Pools and Water Games">
+            </span>
+            <span class="icon-category-label">Pools &amp; Water Games</span>
+          </a>
+          <a class="icon-category-item" href="shop.html?category=sunglasses">
+            <span class="icon-category-media">
+              <img class="icon-category-frame" src="icons1.svg" alt="" aria-hidden="true">
+              <img class="icon-category-photo" src="https://picsum.photos/seed/glasses/120/120" alt="Sunglasses">
+            </span>
+            <span class="icon-category-label">Sunglasses</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
 
     <section class="category-panels py-4 reveal">
       <div class="container">
@@ -172,10 +256,16 @@
     </section>
 
 
-    <section class="product-section py-5 reveal">
+    <section class="product-section ramadan-section py-5 reveal">
       <div class="container">
+        <div class="ramadan-moons" aria-hidden="true">
+          <i class="bi bi-moon-stars-fill ramadan-moon moon-1"></i>
+          <i class="bi bi-moon-stars-fill ramadan-moon moon-2"></i>
+          <i class="bi bi-moon-stars-fill ramadan-moon moon-3"></i>
+          <i class="bi bi-moon-stars-fill ramadan-moon moon-4"></i>
+        </div>
         <div class="section-head d-flex justify-content-between align-items-center mb-3">
-          <h2 class="section-title mb-0">RAMADAN</h2>
+          <h2 class="section-title mb-0"><i class="bi bi-moon-stars-fill ramadan-helal" aria-hidden="true"></i> RAMADAN</h2>
           <a href="#" class="section-link">See all</a>
         </div>
 
@@ -280,7 +370,7 @@
       </div>
     </section>
 
-    <section class="product-section py-5 reveal">
+    <section class="product-section akwa-section py-5 reveal">
       <div class="container">
         <div class="akwa-slider-head d-flex align-items-center justify-content-between gap-3 mb-3">
           <h2 class="section-title mb-0">akwa safqqa</h2>
